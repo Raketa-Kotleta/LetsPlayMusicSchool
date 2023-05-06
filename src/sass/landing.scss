@@ -1,0 +1,511 @@
+@import './functions.scss';
+@import './colors.scss';
+@import './fonts.scss';
+@import './delays.scss';
+@media screen and (max-width: 525px){
+    
+    .toggle{
+        transform: translateX(-100%);
+    }
+    .toggle.active{
+        transform: translateX(0);
+    }
+    .dropdown-list{
+        right: 0;
+        left: 0;
+        display: none;
+        .dropdown-item{
+            .dropdown-link{
+                &:hover{
+                    color: $black-100;
+                    font-weight: 600;
+                }
+            }
+        }   
+        background-color: white;
+    }
+    .background-image{
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+    }
+    .dropdown-icon{
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        transform: rotate(180deg);
+        vertical-align: middle;
+    }
+    
+    .link{
+        font-family: "Montserrat";
+        color: $black-100;
+        text-decoration: none;
+        &:visited{
+            color: inherit;
+        }
+        &:hover{
+            color: inherit;
+        }
+    }
+    .header{
+        background-color: white;
+        .navbar{
+            display: flex;
+            height: mpxvw(64);
+            padding: 
+                0 
+                mpxvw(16)
+                0 
+                mpxvw(10);
+            border-bottom: 1px solid #E3E8F4;
+            &-content{
+                display: inherit;
+                align-items: center;
+                justify-content: space-between;
+                flex: 1;
+                .navbar-brand{
+                    img{
+                        height: mpxvw(38);
+                        width: mpxvw(132.43);
+                    }
+                }
+                .navbar-toggler{
+                    height:  mpxvw(42);
+                    width:  mpxvw(107);
+                    background-color: $black-100;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &-text{
+                        color: white;
+                        font-family: "Montserrat";
+                        font-size: mpxvw(14);
+                        margin: 
+                            0 
+                            0 
+                            0 
+                            mpxvw(5);
+                    }
+                    &-image{
+                        width: mpxvw(15);
+                        height: mpxvw(11.67);
+                        
+                    }
+                }
+                .navbar-toggle{
+                    z-index: 2;
+                    background-color: white;
+                    position: fixed;
+                    top: mpxvw(65);
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    padding:
+                        mpxvw(45)
+                        0
+                        0
+                        0;
+                    .nav-list{
+                        display: flex;
+                        flex-direction: column;
+                        &-item{
+                            border-bottom: 1px solid $gray-100;
+                            line-height: 140%;
+                            padding: 
+                                mpxvw(16) 
+                                mpxvw(26);
+                            margin: 
+                                0
+                                0
+                                0
+                                0; 
+                            &:last-child{
+                                padding: 
+                                    mpxvw(10)
+                                    mpxvw(16)
+                                    mpxvw(10) 
+                                    mpxvw(26);
+                                .nav-call{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    &-contacts{
+                                        display: flex;
+                                        flex-direction: column;
+                                        text-align: end;
+                                        span, a{
+                                            font-family: "Montserrat";
+                                        }
+                                        span{
+                                            font-weight: 550;
+                                            font-size: mremvw(1);
+                                            line-height: 140%;
+                                        }
+                                        a{
+                                            display: none;
+                                        }
+                                    }
+                                    &-btn{
+                                        font-family: "Montserrat";
+                                        font-size: mpxvw(14);
+                                        font-weight: 500;
+                                        padding: 
+                                            mpxvw(6)
+                                            mpxvw(10)
+                                            mpxvw(7)
+                                            mpxvw(10);
+                                            background-color: $yellow-100;
+                                    }
+                                }
+                            }
+                        }
+                        .dropdown{
+                            padding: 
+                                mpxvw(16)
+                                mpxvw(26);
+                            &:hover{
+                                padding: 
+                                    mpxvw(16)
+                                    mpxvw(26)
+                                    0
+                                    mpxvw(26);
+                                    .dropdown-list{
+                                        display: block;
+                                    }
+                            }
+                            &-item{
+                                padding: 
+                                    mpxvw(16) 
+                                    0;
+                                .dropdown-link{
+                                    color: $gray-300
+                                }
+                            }
+                            .dropdown-icon{
+                                background-image: url("../assets/images/common/dropdown.svg");
+                            }
+                            .dropdown-list{
+                                margin: 
+                                    mpxvw(16)
+                                    0
+                                    0
+                                    0;
+                                padding: 
+                                    0
+                                    0
+                                    0
+                                    mpxvw(19);
+                                border-left: 1px solid $gray-300;
+                            }
+                        }
+                        &-link{
+                            font-family: "Montserrat";
+                            font-weight: 500;
+                            font-size: mremvw(1);
+                            color: $black-100;
+                            text-decoration: none;
+                            :visited{
+                                color: $black-100;
+                            }
+                        }
+                    }
+                }
+          
+            }
+            
+        }
+    }
+    .section{
+        display: flex;
+    }
+    .section-content{
+        display: flex;
+        position: relative;
+    }
+    .float{
+        position: absolute;
+    }
+    .block{
+        display: block;
+        position: relative;   
+    }
+    .block.float{
+        z-index: 10;
+    }
+    .float{
+        position: absolute;
+        display: none !important;
+    }
+    .title{
+        text-align: center;
+    }
+    .section-main{
+        height: mpxvw(926);
+        .section-content{
+            display: flex;
+            flex-wrap: wrap;
+            flex-grow: 1;
+            overflow: hidden;
+            padding: 
+            mpxvw(60)
+            0
+            mpxvw(52)
+            0;
+            &>.block.float{
+                left: mpxvw(440);
+                top: mpxvw(345);
+                z-index: 11;
+                p{
+                    font-family: $unbounded;
+                    font-weight: 300;
+                    line-height: 120%;
+                }
+            }
+            .circle-line{
+                background-image: url("../assets/images/main/decorations/circle line.png");
+            }
+            .curve{
+                background-image: url("../assets/images/main/decorations/curve.png");
+            }
+            .lines{
+                background-image: url("../assets/images/main/decorations/lines.png");
+            }
+            .loop-line{
+                background-image: url("../assets/images/main/decorations/loop line.png");
+            }
+            .sheet-8{
+                background-image: url("../assets/images/main/decorations/sheet 8.png");
+            }
+            .sheet-4{
+                background-image: url("../assets/images/main/decorations/sheet 4.png");
+            }
+            .underline-top{
+                background-image: url("../assets/images/main/decorations/underline-top.png");
+            }
+            .underline-bottom{
+                background-image: url("../assets/images/main/decorations/underline-bottom.png");
+            }
+            .block-instrumentals{
+                width: mpxvw(209.27);
+                height: mpxvw(129.54);
+                transform: rotate(38deg);
+                border-radius: 50%;
+                left: mpxvw(382);
+                top: mpxvw(332);
+            }
+            .block-service{
+                width: mpxvw(241*0.89);
+                height: mpxvw(200*0.89);
+                line-height: 140%;
+                padding: 
+                mpxvw(12)
+                mpxvw(12.45)
+                mpxvw(12)
+                mpxvw(12.45);
+                p{
+                    font-family: $unbounded;
+                    text-align: end;
+                    font-weight: 300;
+                    line-height: 100%;
+                }
+                @for $i from 1 through 3{
+                    p:nth-child(#{$i}){
+                        @if ($i == 1 or $i == 2){
+                            margin-bottom: mpxvw(28);
+                        }
+                    }
+                }
+                left: mpxvw(1416);
+                top: mpxvw(516.69);
+
+            }
+           
+            .girl-guitar.background-image{
+                background-image: url("../assets/images/main/md/people/girl-guitar.png");
+            }
+            .title{
+                font-family: $unbounded !important;
+                font-weight: 400;
+                line-height: 120%;
+                margin: 
+                0
+                0
+                mpxvw(15)
+                0;
+                
+            }
+            .help-buttons{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .read-more-btn{
+                    width: mpxvw(289);
+                    height: mpxvw(66);
+                    margin-bottom: mpxvw(10);
+                    transition-property: background-color;
+                    line-height: 140%;
+                    text-transform: uppercase;
+                }
+                .choose-dir-btn{
+                    width: mpxvw(289);
+                    height: mpxvw(66);
+                    border: 1px solid $black-100;
+                    transition-property: background-color;
+                    line-height: 140%;
+                    text-transform: uppercase;
+                }
+            }
+            .girl-guitar{
+                width: mpxvw(204*1.1);
+                height: mpxvw(204*1.1);
+            }
+            .boy-guitar{
+                width: mpxvw(307*0.95);
+                height: mpxvw(223*1.05);
+                background-position-x: 100%;
+            }
+            .boy-guitar.background-image{
+                background-image: url("../assets/images/main/md/people/boy-guitar.png");
+            }
+            .part-instrumental-info{
+                display: flex;
+                flex-direction: column;
+                flex-basis: 2px;
+                align-self: stretch;
+                justify-content: end;
+                order: 2;
+                position: absolute;
+                left: mpxvw(-40);
+                top: mpxvw(635);
+               
+            }
+            .part-tagline{
+                display: flex;
+                flex-basis: 100%;
+                flex-direction: column;
+                margin: 
+                0
+                0
+                0
+                0;
+                .comment{
+                    width: mpxvw(296);
+                    text-align: center;
+                    line-height: 140%;
+                    margin: 
+                    0
+                    auto
+                    mpxvw(25)
+                    auto;
+                    
+                }
+                .help-buttons{
+                    display: flex;
+                    justify-content: center;
+                }
+                order: 1;
+            }
+            .part-dir-info{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                flex-basis: 50%;
+                justify-content: flex-start;
+                order: 3;
+                position: absolute;
+                right: mpxvw(-62);
+                top: mpxvw(463);
+            }
+        }
+    }
+    .footer{
+        display: flex;
+        height: mpxvw(597);
+        background-color: $black-100;
+        color: white;
+        &-content{
+            display: flex;
+            flex-direction: column;
+            padding: 
+                mpxvw(45)
+                mpxvw(18)
+                mpxvw(57)
+                mpxvw(18);
+            flex: 1;
+            .social-map{
+                .social-brand{
+                    h2{
+                        font-size: mremvw(2.25);
+                        font-family: "Helvetica";
+                        font-weight: 300;
+                        line-height: mpxvw(28);
+                    }
+                    margin:
+                    0
+                    0
+                    mpxvw(12)
+                    0;
+                }
+                .social-links{
+                   display: none;
+                }
+            }
+           
+            .website-map, .contact-map{
+                margin:
+                    mpxvw(16)
+                    0
+                    mpxvw(18)
+                    0;
+                .list-title{
+                    font-size: mpxvw(16);
+                    color: $gray-300;
+                    margin:
+                        0
+                        0
+                        mpxvw(7.5)
+                        0;
+                }
+                .footer-list{
+                    &-item{
+                        padding: 
+                            mpxvw(5)
+                            0
+                            mpxvw(5)
+                            0;
+                        color: white;
+                        line-height: 145%;
+                        font-weight: 300; 
+                        font-size: mpxvw(14);
+                    }
+                }
+            }
+            .social-links{
+                margin:
+                    mpxvw(18)
+                    0
+                    0;
+                .social-link{
+                    display: inline-block;
+                    width: mpxvw(42);
+                    height: mpxvw(42);
+                    margin: 
+                        0
+                        mpxvw(4)
+                        0
+                        0;
+                    &:nth-child(1){
+                        background-image: url("../assets/images/footer/social-links/tg.svg");
+                    }
+                    &:nth-child(2){
+                        background-image: url("../assets/images/footer/social-links/wa.svg");
+                    }
+                    &:nth-child(3){
+                        background-image: url("../assets/images/footer/social-links/yt.svg");
+                    }
+                }
+            }
+        }
+    }    
+}

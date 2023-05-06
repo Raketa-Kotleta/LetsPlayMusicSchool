@@ -1,0 +1,77 @@
+$black-100: #171717;
+$black-200: #101010;
+$yellow-100: #F8E34A;
+$red-100: #E93A2F;
+
+$gray-100: #F2F2F7;
+$gray-200: #f2f2f7;
+$gray-400: #8A8A8F;
+$gray-300: #AFAFAF;
+$gray-700: #333333;
+$white-900: rgb(242, 242, 247);
+$white-100: white;
+
+$colors:(
+    gray-100: $gray-100,
+    gray-200: $gray-200,
+    gray-400: $gray-400,
+    gray-300: $gray-300,
+    gray-700: $gray-700,
+    black-100: $black-100,
+    black-200: $black-200,
+    yellow-100: $yellow-100,
+    red-100: $red-100,
+    white-900: $white-900,
+    white-100: white,
+);
+@each $color_name, $color in $colors{
+    .bg-#{$color_name}{
+        background-color: $color;
+    }
+   
+   
+    .#{$color_name}{
+        color: $color;
+    }
+    
+    .border-#{$color_name}{
+        border-color: $color !important;
+    }
+ 
+}
+@each $color_name, $color in $colors{
+    .bg-hover-#{$color_name}{
+        &:hover{
+            background-color: $color;
+        }
+    }
+    .hover-#{$color_name}{
+        &:hover{
+            color: $color;
+        }
+    }
+    .border-hover-#{$color_name}{
+        &:hover{
+            border-color: $color !important;
+        }
+    }
+ 
+}
+@each $color_name, $color in $colors{
+    .bg-active-#{$color_name}{
+        &:active{
+            background-color: $color;
+        }
+    }
+    .active-#{$color_name}{
+        &:active{
+            color: $color;
+        }
+    }
+    .border-active-#{$color_name}{
+        &:active{
+            border-color: $color !important;
+        }
+    }
+ 
+}

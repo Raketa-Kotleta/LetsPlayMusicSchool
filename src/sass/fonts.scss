@@ -1,0 +1,127 @@
+@import "./functions.scss";
+@mixin includeFont($font-family, $uri, $weight){
+    @font-face {
+        font-family: $font-family;
+        src: url("../assets/fonts" + $uri);
+        font-weight: $weight;
+    }
+    
+}
+@mixin font($font-family, $weight, $stretch: "normal"){
+    font-family: $font-family;
+    font-weight: $weight;
+}
+$geometria: "Geometria";
+$montserrat: "Montserrat";
+$helvetica: "Helvetica";
+$unbounded: "Unbounded";
+$font-bolds:(
+    "thin": 100,
+    "extralight": 200,
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "semibold": 600,
+    "bold": 700,
+    "extrabold": 800,
+    "black": 900,
+);
+$fonts:(
+    $geometria: (
+        "light":(
+            "uri": "/Geometria/geometria_light.otf",
+        ),
+        "medium":(
+            "uri": "/Geometria/geometria_medium.otf",
+        ),
+        "bold":(
+            "uri": "/Geometria/geometria_bold.otf",
+        ),
+        "extrabold":(
+            "uri": "/Geometria/geometria_extrabold.otf",
+        ),
+    ),
+    $helvetica: (
+        "thin":(
+            "uri": "/Helvetica/helvetica_thin.ttf",
+        ),
+        "light":(
+            "uri": "/Helvetica/helvetica_light.otf",
+        ),
+        "regular":(
+            "uri": "/Helvetica/helvetica_regular.otf",
+        ),
+        "medium":(
+            "uri": "/Helvetica/helvetica_medium.ttf",
+        ),
+        "bold":(
+            "uri": "/Helvetica/helvetica_bold.otf",
+        ),
+    ),
+    $unbounded:(
+        "extralight":(
+            "uri": "/Unbounded/Unbounded-ExtraLight.ttf",
+        ),
+        "light":(
+            "uri": "/Unbounded/Unbounded-Light.ttf",
+        ),
+        "regular":(
+            "uri": "/Unbounded/Unbounded-Regular.ttf",
+        ),
+        "medium":(
+            "uri": "/Unbounded/Unbounded-Medium.ttf",
+        ),
+        "semibold":(
+            "uri": "/Unbounded/Unbounded-SemiBold.ttf",
+        ),
+        "bold":(
+            "uri": "/Unbounded/Unbounded-Bold.ttf",
+        ),
+        "extrabold":(
+            "uri": "/Unbounded/Unbounded-ExtraBold.ttf",
+        ),
+        "black":(
+            "uri": "/Unbounded/Unbounded-Black.ttf",
+        ),
+    ),
+); 
+$font-sizes:(
+    f-s-14: 14,
+    f-s-16: 16,
+    f-s-15: 15,
+    f-s-18: 18,
+    f-s-20: 20,
+    f-s-22: 22,
+    f-s-24: 24,
+    f-s-32: 32,
+    f-s-36: 36,
+    f-s-48: 48,
+    f-s-60: 60,
+    f-s-90: 90,
+);
+@each $font-name, $font-variant in $fonts{
+    @each $font-variant-name, $font-variant-value in $font-variant{
+        @include includeFont($font-name, map-get($font-variant-value , "uri"), map-get($font-bolds, $font-variant-name));
+
+    }
+}
+@media screen and (min-width: 525px){
+    @each $fs-name, $font-size in $font-sizes{
+        .#{$fs-name}{
+            font-size: dpxvw($font-size);
+        }
+    }
+}
+@media screen and (max-width: 525px){
+    @each $fs-name, $font-size in $font-sizes{
+        .#{$fs-name}-sm{
+            font-size: mpxvw($font-size);
+        }
+    }
+}
+// @font-face {
+//     font-family: "Geometria";
+//     src: url("../assets/fonts" + "/Geometria/geometria_light.otf");
+//     font-weight: 300;
+// }
+// @include includeFont("Geometria", "/Geometria/geometria_light.otf", 300);

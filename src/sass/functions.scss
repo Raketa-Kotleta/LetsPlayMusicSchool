@@ -1,0 +1,31 @@
+
+
+// @function pxToVwMobile($px){
+//     @return pxToVw($px, 375);
+// }
+// @function remToVw($rems, $viewportWidth){
+//     $px: $rems * 16; 
+//     @return pxToVw($px, $viewportWidth); 
+// }
+// @function remToVwDesktop($rems){
+//     @return remToVw($rems, 1920);
+// }
+// @function remToVwMobile($rems){
+//     @return remToVw($rems, 375);
+// }
+@function mpxvw($px){ 
+    @return calc(($px * 100vw) / 375)
+};
+@function mremvw($rems){
+    $px: $rems * 16; 
+    @return mpxvw($px); 
+}
+@function dpxvw($px){ 
+    @return calc(($px * 100vw) / 1920); 
+}
+@function dremvw($rems){
+    $px: $rems * 16; 
+    @return dpxvw($px); 
+}
+
+

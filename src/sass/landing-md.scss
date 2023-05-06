@@ -1,0 +1,488 @@
+
+@import './colors.scss';
+@import './fonts.scss';
+@import './delays.scss';
+@font-face {
+    font-family: "Montserrat";
+    src: url("../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format('woff2 supports variations'),
+    url("../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format('woff2-variations');
+    font-weight: 100 1000;
+	font-stretch: 25% 151%;
+}
+
+@media screen and (min-width: 525px) {
+    .background-image{
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 50%;
+    }
+    .dropdown-icon{
+        display: inline-block;
+        width: dpxvw(10);
+        height: dpxvw(10);
+        transform: rotate(180deg);
+        vertical-align: middle;
+    }
+    .dropdown{
+        position: relative;
+    }
+    .dropdown-list{
+        z-index: 100;
+        right: 0;
+        left: 0;
+        position: absolute;
+        display: none;
+        .dropdown-item{
+            .dropdown-link{
+                font-size: 0;
+                &:hover{
+                    color: $black-100;
+                    font-weight: 600;
+                }
+            }
+        }   
+        background-color: white;
+    }
+    .dropdown:hover > .dropdown-list{
+        display: block;
+        .dropdown-item{
+            .dropdown-link{
+                font-size: dremvw(1);
+                transition: inherit font-size;
+            }
+        } 
+    }
+    .link{
+        font-family: "Montserrat";
+        color: $black-100;
+        text-decoration: none;
+        &:visited{
+            color: inherit;
+        }
+        &:hover{
+            color: inherit;
+        }
+    }
+    .header{
+        background-color: white;
+        .navbar{
+            display: flex;
+            height: dpxvw(88);
+            padding: 0 14.64vw 0 14.01vw;
+            border-bottom: 1px solid #E3E8F4;
+            &-content{
+                display: inherit;
+                align-items: center;
+                flex-grow: 1;
+                .navbar-brand{
+                    img{
+                        height: dpxvw(38);
+                        width: dpxvw(132.43);
+                    }
+                    flex: 0 0 dpxvw(243 + 132.43)
+                }
+                .navbar-toggler{
+                    display: none;
+                }
+                .navbar-toggle{
+                    flex: 1;
+                }
+                .nav-list{
+                    display: flex;
+                    align-items: center;
+                    &-item{
+                        line-height: 140%;
+                        padding: 
+                            dpxvw(5) 
+                            dpxvw(12);
+                        margin: 
+                            0
+                            0
+                            0
+                            dpxvw(10);
+                        position: relative;
+                        &:nth-child(2){
+                            .nav-list-link{
+                                margin: 0 0 0 dpxvw(10);
+                            }
+                        }
+                        &:nth-last-child(2){
+                            display: none;
+                        }
+                        &:last-child{
+                            margin: 0 0 0 auto;
+                            padding: 0 0 0 0;
+                            .nav-call{
+                                display: flex;
+                                &-contacts{
+                                    display: flex;
+                                    flex-direction: column;
+                                    text-align: end;
+                                    span, a{
+                                        font-family: "Montserrat";
+                                    }
+                                    span{
+                                        font-weight: 400;
+                                        font-size: dremvw(1);
+                                        line-height: 140%;
+                                    }
+                                    a{
+                                        font-size: dpxvw(14);
+                                        font-weight: 700;
+                                        line-height: 140%;
+                                    }
+                                }
+                                &-btn{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                    .dropdown{
+                        .dropdown-icon{
+                            background-image: url("../assets//images/common/dropdown.svg");
+                        }
+                        .dropdown-list{
+                            margin: 
+                                0
+                                0
+                                0
+                                dpxvw(12);
+                            padding: 
+                                dpxvw(16)
+                                dpxvw(17) 
+                                dpxvw(13) 
+                                dpxvw(24);
+                            border-radius: 8px;
+                            border: 1px solid $white-900;
+                            .dropdown-item{
+                                margin: 
+                                    0 
+                                    0 
+                                    dpxvw(11)
+                                    0;
+                                &:last-child{
+                                    margin: 0 0 dpxvw(4) 0;
+                                }
+                                .dropdown-link{
+                                    color: $gray-700;
+                                    
+                                }
+                            }
+                        }
+                    }
+                    &-link{
+                        font-family: "Montserrat";
+                        font-weight: 500;
+                        font-size: dremvw(1);
+                        color: $black-100;
+                    }
+                }
+                
+            }
+            
+        }
+    }
+    .section{
+        display: flex;
+    }
+    .section-content{
+        display: flex;
+        position: relative;
+    }
+    .float{
+        position: absolute;
+    }
+    .block{
+        display: block;
+        position: relative;   
+    }
+    .block.float{
+        z-index: 10;
+    }
+    .float{
+        position: absolute;
+    }
+    .title{
+        text-align: center;
+    }
+    .section-main{
+        height: dpxvw(847);
+        .section-content{
+            display: flex;
+            flex: 1;
+            justify-content: end;
+            padding: 
+            dpxvw(67)
+            0
+            dpxvw(91)
+            0;
+            .circle-line{
+                background-image: url("../assets/images/main/decorations/circle line.png");
+                width: dpxvw(71);
+                height: dpxvw(82);
+                top: dpxvw(606);
+                left: dpxvw(1334);
+            }
+            .curve{
+                background-image: url("../assets/images/main/decorations/curve.png");
+                width: dpxvw(182);
+                height: dpxvw(49);
+                top: dpxvw(107);
+                left: dpxvw(1242);
+            }
+            .lines{
+                background-image: url("../assets/images/main/decorations/lines.png");
+                width: dpxvw(70);
+                height: dpxvw(40);
+                top: dpxvw(285);
+                left: dpxvw(341);
+            }
+            .loop-line{
+                background-image: url("../assets/images/main/decorations/loop line.png");
+                width: dpxvw(121*1.5);
+                height: dpxvw(272*1.1);
+                top: dpxvw(383);
+                left: dpxvw(60);
+            }
+            .sheet-8{
+                background-image: url("../assets/images/main/decorations/sheet 8.png");
+                width: dpxvw(44);
+                height: dpxvw(54);
+                top: dpxvw(188);
+                left: dpxvw(461);
+            }
+            .sheet-4{
+                background-image: url("../assets/images/main/decorations/sheet 4.png");
+                width: dpxvw(27);
+                height: dpxvw(46);
+                top: dpxvw(680);
+                left: dpxvw(1259);
+            }
+            .underline-top{
+                background-image: url("../assets/images/main/decorations/underline-top.png");
+                width: dpxvw(331);
+                height: dpxvw(14);
+                top: dpxvw(270);
+                left: dpxvw(858);
+                z-index: -1;
+            }
+            .underline-bottom{
+                background-image: url("../assets/images/main/decorations/underline-bottom.png");
+                width: dpxvw(318);
+                height: dpxvw(10);
+                top: dpxvw(381);
+                left: dpxvw(940);
+                z-index: -1;
+            }
+            &>.block.float{
+                left: dpxvw(440);
+                top: dpxvw(345);
+                z-index: 11;
+                p{
+                    font-family: $unbounded;
+                    font-weight: 300;
+                    line-height: 120%;
+                }
+            }
+            .block-instrumentals{
+                width: dpxvw(209.27);
+                height: dpxvw(129.54);
+                transform: rotate(38deg);
+                border-radius: 50%;
+                left: dpxvw(382);
+                top: dpxvw(332);
+            }
+            .block-service{
+                width: dpxvw(241*0.89);
+                height: dpxvw(200*0.89);
+                line-height: 140%;
+                padding: 
+                dpxvw(12)
+                dpxvw(12.45)
+                dpxvw(12)
+                dpxvw(12.45);
+                p{
+                    font-family: $unbounded;
+                    text-align: end;
+                    font-weight: 300;
+                    line-height: 100%;
+                }
+                @for $i from 1 through 3{
+                    p:nth-child(#{$i}){
+                        @if ($i == 1 or $i == 2){
+                            margin-bottom: dpxvw(28);
+                        }
+                    }
+                }
+                left: dpxvw(1416);
+                top: dpxvw(516.69);
+
+            }
+            .girl-guitar {
+                width: dpxvw(350*1.105);
+                height: dpxvw(350*1.105);
+            }
+            .girl-guitar.background-image{
+                background-image: url("../assets/images/main/md/people/girl-guitar.png");
+            }
+            .title{
+                font-family: $unbounded !important;
+                font-weight: 400;
+                line-height: 120%;
+                margin: 
+                dpxvw(22)
+                0
+                dpxvw(34)
+                0;
+                
+            }
+            .help-buttons{
+                display: flex;
+                .read-more-btn{
+                    width: dpxvw(263);
+                    height: dpxvw(66);
+                    margin-right: dpxvw(10);
+                    transition-property: background-color;
+                    line-height: 140%;
+                    text-transform: uppercase;
+                }
+                .choose-dir-btn{
+                    width: dpxvw(307);
+                    height: dpxvw(66);
+                    border: 1px solid $black-100;
+                    transition-property: background-color;
+                    line-height: 140%;
+                    text-transform: uppercase;
+                }
+            }
+            .boy-guitar{
+                width: dpxvw(768*0.81);
+                height: dpxvw(555*1.02);
+                background-position-x: 100%;
+            }
+            .boy-guitar.background-image{
+                background-image: url("../assets/images/main/md/people/boy-guitar.png");
+            }
+            .part-instrumental-info{
+                display: flex;
+                flex-direction: column;
+                flex-basis: dpxvw(405);
+                align-self: stretch;
+                justify-content: end;
+            }
+            .part-tagline{
+                display: flex;
+                flex-basis: dpxvw(612);
+                flex-direction: column;
+                margin: 
+                dpxvw(94)
+                0
+                0
+                0;
+                .comment{
+                    width: dpxvw(522);
+                    text-align: center;
+                    line-height: 130%;
+                    margin: 
+                    0
+                    auto
+                    dpxvw(59)
+                    dpxvw(31);
+                    
+                }
+                .help-buttons{
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+            .part-dir-info{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                flex-basis: dpxvw(618);
+                justify-content: flex-start;
+            }
+        }
+    }
+    .footer{
+        display: flex;
+        height: dpxvw(321);
+        background-color: $black-100;
+        color: white;
+        &-content{
+            display: flex;
+            padding: 
+            dpxvw(52)
+            dpxvw(281);
+            flex: 1;
+            .social-map{
+                .social-brand{
+                    h2{
+                        font-size: dpxvw(40);
+                        font-family: "Helvetica";
+                        font-weight: 300;
+                        line-height: dpxvw(28);
+                    }
+                }
+                .social-links{
+                    margin:
+                        dpxvw(55)
+                        0
+                        0
+                        0;
+                    .social-link{
+                        display: inline-block;
+                        width: dpxvw(42);
+                        height: dpxvw(42);
+                        margin: 
+                            0
+                            dpxvw(4)
+                            0
+                            0;
+                        &:nth-child(1){
+                            background-image: url("../assets/images/footer/social-links/tg.svg");
+                        }
+                        &:nth-child(2){
+                            background-image: url("../assets/images/footer/social-links/wa.svg");
+                        }
+                        &:nth-child(3){
+                            background-image: url("../assets/images/footer/social-links/yt.svg");
+                        }
+                    }
+                }
+            }
+           
+            .website-map, .contact-map{
+                max-width: dpxvw(247);
+                margin: 
+                    0
+                    0
+                    0
+                    dpxvw(241);
+                .list-title{
+                    font-size: dpxvw(18);
+                    color: $gray-300;
+                    margin:
+                    0
+                    0
+                    dpxvw(10)
+                    0;
+                }
+                .footer-list{
+                    &-item{
+                        padding: 
+                        dpxvw(5)
+                        0
+                        dpxvw(5)
+                        0;
+                        color: white;
+                        line-height: 145%;
+                        font-weight: 300;
+                        font-size: dpxvw(16);
+                    }
+                }
+            }
+        }
+    }
+}
