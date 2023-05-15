@@ -50,6 +50,11 @@
     }
     .header{
         background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 20;
         .navbar{
             display: flex;
             height: mpxvw(64);
@@ -66,8 +71,8 @@
                 flex: 1;
                 .navbar-brand{
                     img{
-                        height: mpxvw(38);
-                        width: mpxvw(132.43);
+                        height: mpxvw(72);
+                        width: mpxvw(72);
                     }
                 }
                 .navbar-toggler{
@@ -218,6 +223,7 @@
     }
     .section{
         display: flex;
+        scroll-behavior: smooth;
     }
     .section-content{
         display: flex;
@@ -231,17 +237,18 @@
         position: relative;   
     }
     .block.float{
-        z-index: 10;
+        z-index: 1;
     }
     .float{
         position: absolute;
-        display: none !important;
+        z-index: 1;
     }
     .title{
         text-align: center;
     }
     .section-main{
         height: mpxvw(926);
+        margin-top: mpxvw(64);
         .section-content{
             display: flex;
             flex-wrap: wrap;
@@ -252,9 +259,70 @@
             0
             mpxvw(52)
             0;
+            .circle-line{
+                background-image: url("../assets/images/main/decorations/circle line.png");
+                width: mpxvw(43.55*1.2);
+                height: mpxvw(45.33*1.2);
+                top: mpxvw(776);
+                left: mpxvw(322);
+                transform: matrix(-0.49, -0.87, -0.87, 0.49, 0, 0);
+            }
+            .curve{
+                background-image: url("../assets/images/main/decorations/curve.png");
+                width: mpxvw(182*0.7);
+                height: mpxvw(49*0.7);
+                top: mpxvw(485);
+                left: mpxvw(130);
+            }
+            .lines{
+                background-image: url("../assets/images/main/decorations/lines.png");
+                width: mpxvw(70*0.6);
+                height: mpxvw(40*0.6);
+                top: mpxvw(55);
+                left: mpxvw(300);
+                transform: rotate(110deg);
+            }
+            .loop-line{
+                background-image: url("../assets/images/main/decorations/loop-line-sm.svg");
+                width: mpxvw(55*2.3);
+                height: mpxvw(126*2.3);
+                top: mpxvw(373);
+                left: mpxvw(20);
+            }
+            .sheet-8{
+                background-image: url("../assets/images/main/decorations/sheet 8.png");
+                width: mpxvw(44*0.7);
+                height: mpxvw(54*0.7);
+                top: mpxvw(20);
+                left: mpxvw(30);
+            }
+            .sheet-4{
+                background-image: url("../assets/images/main/decorations/sheet 4.png");
+                width: mpxvw(27*1.2);
+                height: mpxvw(46*1.2);
+                top: mpxvw(828);
+                left: mpxvw(205);
+                transform: rotate(-20deg);
+            }
+            .underline-top{
+                background-image: url("../assets/images/main/decorations/underline-top.png");
+                width: mpxvw(331);
+                height: mpxvw(14);
+                top: mpxvw(270);
+                left: mpxvw(858);
+                z-index: -1;
+            }
+            .underline-bottom{
+                background-image: url("../assets/images/main/decorations/underline-bottom.png");
+                width: mpxvw(318);
+                height: mpxvw(10);
+                top: mpxvw(381);
+                left: mpxvw(940);
+                z-index: -1;
+            }
             &>.block.float{
-                left: mpxvw(440);
-                top: mpxvw(345);
+                left: mpxvw(67);
+                top: mpxvw(590);
                 z-index: 11;
                 p{
                     font-family: $unbounded;
@@ -262,47 +330,23 @@
                     line-height: 120%;
                 }
             }
-            .circle-line{
-                background-image: url("../assets/images/main/decorations/circle line.png");
-            }
-            .curve{
-                background-image: url("../assets/images/main/decorations/curve.png");
-            }
-            .lines{
-                background-image: url("../assets/images/main/decorations/lines.png");
-            }
-            .loop-line{
-                background-image: url("../assets/images/main/decorations/loop line.png");
-            }
-            .sheet-8{
-                background-image: url("../assets/images/main/decorations/sheet 8.png");
-            }
-            .sheet-4{
-                background-image: url("../assets/images/main/decorations/sheet 4.png");
-            }
-            .underline-top{
-                background-image: url("../assets/images/main/decorations/underline-top.png");
-            }
-            .underline-bottom{
-                background-image: url("../assets/images/main/decorations/underline-bottom.png");
-            }
             .block-instrumentals{
-                width: mpxvw(209.27);
-                height: mpxvw(129.54);
+                width: mpxvw(134);
+                height: mpxvw(92);
                 transform: rotate(38deg);
                 border-radius: 50%;
-                left: mpxvw(382);
-                top: mpxvw(332);
+                left: mpxvw(32);
+                top: mpxvw(580);
             }
             .block-service{
-                width: mpxvw(241*0.89);
-                height: mpxvw(200*0.89);
-                line-height: 140%;
+                width: mpxvw(138);
+                height: mpxvw(120);
+                line-height: 120%;
                 padding: 
-                mpxvw(12)
+                mpxvw(9)
                 mpxvw(12.45)
-                mpxvw(12)
-                mpxvw(12.45);
+                mpxvw(6)
+                mpxvw(6.45);
                 p{
                     font-family: $unbounded;
                     text-align: end;
@@ -312,12 +356,12 @@
                 @for $i from 1 through 3{
                     p:nth-child(#{$i}){
                         @if ($i == 1 or $i == 2){
-                            margin-bottom: mpxvw(28);
+                            margin-bottom: mpxvw(16);
                         }
                     }
                 }
-                left: mpxvw(1416);
-                top: mpxvw(516.69);
+                left: mpxvw(50);
+                top: mpxvw(180);
 
             }
            
@@ -359,6 +403,9 @@
             .girl-guitar{
                 width: mpxvw(204*1.1);
                 height: mpxvw(204*1.1);
+                position: absolute;
+                left: mpxvw(-40);
+                top: mpxvw(635);
             }
             .boy-guitar{
                 width: mpxvw(307*0.95);
@@ -375,9 +422,7 @@
                 align-self: stretch;
                 justify-content: end;
                 order: 2;
-                position: absolute;
-                left: mpxvw(-40);
-                top: mpxvw(635);
+                
                
             }
             .part-tagline{
@@ -416,6 +461,1593 @@
                 position: absolute;
                 right: mpxvw(-62);
                 top: mpxvw(463);
+            }
+        }
+    }
+    .form{
+        .label{
+            position: relative;
+               &:has(.form-input:not(:valid):not(:focus)){
+                    &::after{
+                        transition: 1s;
+                        padding: mpxvw(20) mpxvw(10);
+                        font-size: mpxvw(18);
+                        color: white;
+                        position: absolute;
+                        background-color: $red-100;
+                        top:mpxvw(76);
+                        right: 0;
+                        left: 0;
+                        height: mpxvw(18);
+                        z-index: 100;
+                        border-radius: 8px;
+                    }
+                    &::before{
+                        content: "";
+                        position: absolute;
+                       
+                        top: mpxvw(67);
+                        left: mpxvw(18);
+                        z-index: 100;
+                        border: 0 solid transparent;
+                        border-right-width: mpxvw(10);
+                        border-left-width:  mpxvw(10);
+                        border-bottom:  mpxvw(10) solid $red-100;
+                    }
+               }
+               &:has(.form-input[type="text"]:not(:valid):not(:focus)){
+                &::after{
+                    content: "Неправильно введено имя";
+                    top: mpxvw(60);
+                }
+                &::before{
+                    top: mpxvw(51);
+                }
+               }
+               &:has(.form-input[type="tel"]:not(:valid):not(:focus)){
+                    &::after{
+                        content: "Неправильно введен номер";
+                    }
+               }
+               &:has(.form-input[type="email"]:not(:valid):not(:focus)){
+                &::after{
+                    content: "Неправильно введен email";
+                    
+                }
+               }
+           }
+        &-input{
+            padding: 
+            0
+            mpxvw(27);
+            height: mpxvw(62);
+            border-width: 1px;
+            border-style: solid;
+            outline: none;
+            color: $black-100;
+            &::placeholder{
+                color: $gray-300;
+                font-family: 'Montserrat';
+                font-weight: 500;
+                font-size: mpxvw(map-get($font-sizes, "f-s-15"));
+            }
+            &:hover{
+                border-color: $gray-500;
+                &::placeholder{
+                    color: $black-100;
+                }
+            }
+            &:focus{
+                &::placeholder{
+                    color: $black-100;
+                }
+            }
+        }
+    }
+    .submit-btn{
+        text-transform: uppercase;
+    }
+    .container{
+        display: flex;
+    }
+    .section-consultation{
+        .section-content{
+            .circle-line{
+                background-image: url("../assets/images/form consultation/decorations/circle-line.png");
+                width: mpxvw(83);
+                height: mpxvw(97);
+                top: mpxvw(880);
+                left: mpxvw(220);
+                transform: rotate(-60deg);
+            }
+            .sheet-16{
+                background-image: url("../assets/images/form consultation/decorations/sheet-16.png");
+                width: mpxvw(23*1.3);
+                height: mpxvw(38*1.3);
+                top: mpxvw(750);
+                left: mpxvw(220);
+            }
+            .sheet-8{
+                background-image: url("../assets/images/form consultation/decorations/sheet-8.png");
+                width: mpxvw(28*1.3);
+                height: mpxvw(34*1.3);
+                top: mpxvw(820);
+                left: mpxvw(250);
+            }
+            .underline{
+                background-image: url("../assets/images/form consultation/decorations/underline.png");
+                width: mpxvw(226);
+                height: mpxvw(10);
+                top: mpxvw(118);
+                left: mpxvw(75);
+            }
+            .underline-bottom{
+                background-image: url("../assets/images/form consultation/decorations/underline.png");
+                width: mpxvw(214);
+                height: mpxvw(10);
+                top: mpxvw(144);
+                left: mpxvw(75);
+            }
+            padding: 
+            mpxvw(45)
+            mpxvw(0)
+            mpxvw(32)
+            mpxvw(0);
+            flex-grow: 1;
+            justify-content: center;
+            
+        }
+        #block-tg-link{
+            width: mpxvw(198);
+            padding: 
+            mpxvw(13)
+            mpxvw(13)
+            mpxvw(11)
+            mpxvw(15);
+            top: mpxvw(970);
+            left: mpxvw(122);
+            p{
+                font-family: $unbounded;
+                font-weight: 300;
+                line-height: 120%;
+                a{
+                    font-family: inherit;
+                    font-weight: inherit;
+                }
+            }
+        }
+        .section-content>.block{
+            width: mpxvw(343);
+            .block-content{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .part-photo{
+                    order: 2;
+                    .background-image{
+                        height: mpxvw(402);
+                        width: mpxvw(341);
+                        background-image: url("../assets/images/form consultation/sm/girl and micro.png");
+                    }
+                }
+                .part-form{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    order: 1;
+                    padding: 
+                    mpxvw(21)
+                    mpxvw(13)
+                    mpxvw(0)
+                    mpxvw(13);
+                    .form-title{
+                        width: mpxvw(252);
+                        text-align: center;
+                        font-family: $unbounded;
+                        font-weight: 400;
+                        line-height: 120%;
+                        margin:
+                        0
+                        0
+                        mpxvw(11)
+                        0;
+                    }
+                    .form-text{
+                        line-height: 145%;
+                        font-family: $montserrat;
+                        width: mpxvw(265);
+                        text-align: center;
+                        margin: 
+                        0
+                        0
+                        mpxvw(27)
+                        0;
+                    }
+                    .form{
+                        &-input{
+                            width: mpxvw(318-(25*2));
+                            margin: 
+                            0
+                            0
+                            mpxvw(12)
+                            0;
+                        }
+                        .container{
+                            flex-direction: column;
+                            align-items: center;
+                            margin: 
+                            0
+                            0
+                            mpxvw(9)
+                            0;
+                        }
+                        .form-submit.container{
+                            .form-text{
+                                width: mpxvw(304);
+                                text-align: left;
+                            }
+                            .submit-btn{
+                                width: mpxvw(293);
+                                height: mpxvw(66);
+                                text-transform: uppercase;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+    .section-course{
+        .section-content{
+            flex-direction: column;
+            align-items: center;
+            padding: 
+            mpxvw(112)
+            0
+            mpxvw(114)
+            0;
+            .title{
+                font-family: $unbounded;
+                margin-bottom: mpxvw(64);
+            }
+            .block{
+                width: mpxvw(343);
+                
+                .form-control{
+                    &-content{
+                        display: flex;
+                        flex-wrap: wrap;
+                        padding: mpxvw(1);
+                        .radio{
+                          display: none;  
+                        }
+                        #guitar:checked+.radio-label-guitar{
+                            background-color: $black-100;
+                            color: $white-100;
+                        }
+                        #vocale:checked+.radio-label-vocale{
+                            background-color: $black-100;
+                            color: $white-100;
+                        }
+                        #piano:checked+.radio-label-piano{
+                            background-color: $black-100;
+                            color: $white-100;
+                        }
+                        #ukulele:checked+.radio-label-ukulele{
+                            background-color: $black-100;
+                            color: $white-100;
+                        }
+                        .radio-label{
+                            background-color: $white-100;
+                            display: block;
+                            width: mpxvw(170);
+                            height: mpxvw(31);
+                            margin-left: mpxvw(0);
+                            text-align: center;
+                            padding-top: mpxvw(15);
+                        }
+                    }
+                }
+                .block-content.active{
+                    display: flex;
+                    flex-direction: column;
+                }
+                .content-course{
+                    .sheet-2{
+                        background-image: url("../assets/images/courses/decorations/sheet-2.svg");
+                        width: mpxvw(28*1.5);
+                        height: mpxvw(48*1.5);
+                    }
+                    .key{
+                        background-image: url("../assets/images/courses/decorations/key.svg");
+                        width: mpxvw(25*1.6);
+                        height: mpxvw(84*1.6);
+                    }
+                    .spray{
+                        background-image: url("../assets/images/courses/decorations/spray.svg");
+                        width: mpxvw(30);
+                        height: mpxvw(24);
+                        display: none;
+                    }
+                    .zig-zag{
+                        background-image: url("../assets/images/courses/decorations/zig-zag.svg");
+                        width: mpxvw(525);
+                        height: mpxvw(20);
+                        display: none;
+                    }
+                }
+                .block-content{
+                    padding: 
+                    mpxvw(54)
+                    mpxvw(13)
+                    mpxvw(34)
+                    mpxvw(13);
+                    display: none;
+                    .block-header{
+                        display: flex;
+                        justify-content: center;
+                        .block-photo{
+                            width: mpxvw(244);
+                            height: mpxvw(268);
+                            
+                        }
+                    }
+                    .block-body{
+                        margin-top: mpxvw(18);
+                        .block-title{
+                            font-family: $unbounded;
+                            line-height: 100%;
+                            font-weight: 500;
+                            margin-bottom: mpxvw(16);
+                        }
+                        .block-text{
+                            font-family: $montserrat;
+                            line-height: 135%;
+                            br{
+                                display: none;
+                            }
+                        }
+                        .submit-btn{
+                            width: mpxvw(293);
+                            height: mpxvw(66);
+                            transition-property: background-color;
+                            margin-top: mpxvw(24);
+                        }
+                    }
+                }
+                .content-course-guitar{ 
+                    .block-photo{
+                        background-image: url("../assets/images/courses/common/boy_guitar.png");
+                    }
+                    .sheet-2{
+                        top: mpxvw(380);
+                        left: mpxvw(274);
+                        transform: rotate(27deg);
+                    }
+                    .key{
+                        top: mpxvw(113);
+                        left: mpxvw(13);
+                        transform: rotate(-17deg);
+                    }
+                    .spray{
+                        top: mpxvw(570);
+                        left: mpxvw(33);
+                    }
+                    .zig-zag{
+                        top: mpxvw(66);
+                        left: mpxvw(20);
+                    }
+                }
+                .content-course-vocale {
+                    .block-photo{
+                        background-image: url("../assets/images/courses/common/girl_sign.png");
+                    }
+                    .sheet-2{
+                        top: mpxvw(380);
+                        left: mpxvw(274);
+                        
+                    }
+                    .key{
+                        top: mpxvw(113);
+                        left: mpxvw(13);
+                        
+                    }
+                    .spray{
+                        top: mpxvw(590);
+                        left: mpxvw(68);
+                    }
+                    .zig-zag{
+                        top: mpxvw(66);
+                        left: mpxvw(20);
+                    }
+                }
+                .content-course-piano {
+                    .block-photo{
+                        background-image: url("../assets/images/courses/common/boy_guitar_2.png");
+                    }
+                    .sheet-2{
+                        top: mpxvw(380);
+                        left: mpxvw(274);
+                        transform: rotate(27deg);
+                    }
+                    .key{
+                        top: mpxvw(113);
+                        left: mpxvw(13);
+                        transform: rotate(-17deg);
+                    }
+                    .spray{
+                        top: mpxvw(560);
+                        left: mpxvw(39);
+                        transform: rotate(5.1deg);
+                    }
+                    .zig-zag{
+                        top: mpxvw(66);
+                        left: mpxvw(20);
+                    }
+                }
+                .content-course-ukulele {
+                    .block-photo{
+                        background-image: url("../assets/images/courses/common/girl_guitar.png");
+                    }
+                    .sheet-2{
+                        top: mpxvw(380);
+                        left: mpxvw(274);
+                        
+                    }
+                    .key{
+                        top: mpxvw(113);
+                        left: mpxvw(13);
+                        
+                    }
+                    .spray{
+                        top: mpxvw(590);
+                        left: mpxvw(68);
+                    }
+                    .zig-zag{
+                        top: mpxvw(66);
+                        left: mpxvw(20);
+                    }
+                }
+            }
+        }
+    }
+    .section-teachers{
+        display: block;
+        .section-content{
+            padding: 
+            mpxvw(45)
+            mpxvw(0)
+            mpxvw(63)
+            mpxvw(0);
+            display: block;
+            .title{
+                font-family: $unbounded;
+                margin-bottom: mpxvw(24);
+                font-weight: 500;
+            }
+            .slider-content{
+                .teacher-block{
+                    position: relative;
+                    width: mpxvw(321) !important;
+                    height: mpxvw(345);
+                    margin: mpxvw(8) auto;
+                    padding: 
+                    mpxvw(12)
+                    mpxvw(8)
+                    mpxvw(12)
+                    mpxvw(22);
+                    .instrument-skill{
+                        line-height: 145%;
+                        padding: 
+                        mpxvw(2)
+                        mpxvw(2)
+                        mpxvw(2)
+                        mpxvw(2);
+                    }
+                    .block-header{
+                        display: flex;
+                        margin: 
+                        0
+                        0
+                        mpxvw(40)
+                        0;
+                        .teacher-avatar{
+                            width: mpxvw(185);
+                            height: mpxvw(121);
+                        }
+                        .teacher-info{
+                            &-name{
+                                font-family: $unbounded;
+                            }
+                            margin-top: mpxvw(12);
+                        }
+                       
+                    }
+                   
+                    .block-body{
+                        .teacher-fact{
+                            line-height: 1.75;
+                            // margin-bottom: mpxvw(7);
+                        }
+                        .teacher-fact::before{
+                            content: "— ";
+                        }
+                    }
+                    .block-footer{
+                        padding: mpxvw(10) 0;
+                        .read-more{
+                            background-color: transparent;
+                            border: none;
+                            text-decoration: underline;
+                            cursor: pointer;
+                            line-height: 145%;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+                .daniyar-block .teacher-avatar{
+                    margin-left: mpxvw(20) !important;
+                    background-image: url("../assets/images/teachers/common/avatars/daniyar.png");
+                }
+                .insaf-block .teacher-avatar{
+                    
+                    margin-left: mpxvw(40) !important;
+                    background-image: url("../assets/images/teachers/common/avatars/insaf.png");
+                }
+                .elmira-block .teacher-avatar{
+                    margin-left: mpxvw(15) !important;
+                    
+                    background-image: url("../assets/images/teachers/common/avatars/elmira.png");
+                }
+                .bulat-block .teacher-avatar{
+                    margin-left: mpxvw(50) !important;
+                    background-image: url("../assets/images/teachers/common/avatars/bulat.png");
+                }
+                .elvina-block .teacher-avatar{
+                    margin-left: mpxvw(40) !important;
+                    background-image: url("../assets/images/teachers/common/avatars/elvina.png");
+                }
+                .anastasia-block .teacher-avatar{
+                    margin-left: mpxvw(40) !important;
+                    background-image: url("../assets/images/teachers/common/avatars/anastasia.png");
+                }
+                .leyli-block .teacher-avatar{
+                    margin-left: mpxvw(20) !important;
+                    background-image: url("../assets/images/teachers/common/avatars/leyli.png");
+                }
+                .bulat-block, .daniyar-block, .elmira-block, .insaf-block {
+                    .instrument-skill{
+                        font-family: $montserrat;
+                    }
+                }
+                .daniyar-block .instrument-skill{
+                    transform: rotate(-5deg);
+                    top: mpxvw(55)
+                }
+              
+                .bulat-block{
+                    .instrument-skill{
+                        transform: rotate(-5deg);
+                        top: mpxvw(55)
+                    }
+                }
+                .elvina-block, .anastasia-block, .leyli-block  {
+                        .instrument-skill{
+                        transform: rotate(-5deg);
+                        top: mpxvw(55)
+                    }
+                }
+                .insaf-block{
+                    .instrument-skill:nth-child(1){
+                        transform: rotate(-5deg);
+                        top: mpxvw(55)
+                    }
+                    .instrument-skill:nth-child(2){
+                        transform: rotate(5deg);
+                        top: mpxvw(90);
+                        left: mpxvw(35);
+                    }
+                }
+                .elmira-block{
+                    .instrument-skill:nth-child(1){
+                        transform: rotate(-5deg);
+                        top: mpxvw(55)
+                    }
+                    .instrument-skill:nth-child(2){
+                        transform: rotate(5deg);
+                        top: mpxvw(90);
+                        left: mpxvw(35);
+                    }
+                }
+                .daniyar-block .block-two-decorations{
+                    .loop-line{
+                        background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                        width: mpxvw(129);
+                        height: mpxvw(54);
+                        top: mpxvw(86);
+                        left: mpxvw(28);
+                    }
+                    .sheet-8{
+                        background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                        width: mpxvw(36*1.1);
+                        height: mpxvw(43*1.1);
+                        top: mpxvw(101);
+                        left: mpxvw(29);
+                        transform: rotate(-13deg);
+                    }
+                }
+                .insaf-block{
+                    .loop-line{
+                        background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                        width: mpxvw(129);
+                        height: mpxvw(54);
+                        top: mpxvw(97);
+                        left: mpxvw(138);
+                        display: none;
+                    }
+                    .sheet-8{
+                        background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                        width: mpxvw(36*1.1);
+                        height: mpxvw(43*1.1);
+                        top: mpxvw(114);
+                        left: mpxvw(29);
+                        transform: rotate(23deg);
+                    }
+                }
+                .elmira-block{
+                    .loop-line{
+                        background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                        width: mpxvw(129);
+                        height: mpxvw(54);
+                        top: mpxvw(117);
+                        left: mpxvw(138);
+                        display: none;
+                    }
+                    .sheet-8{
+                        background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                        width: mpxvw(36*1.1);
+                        height: mpxvw(43*1.1);
+                        top: mpxvw(114);
+                        left: mpxvw(29);
+                        transform: rotate(23deg);
+                    }
+                }
+                .bulat-block, .block-three-decorations{
+                    .loop-line{
+                        background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                        width: mpxvw(129);
+                        height: mpxvw(54);
+                        top: mpxvw(86);
+                        left: mpxvw(28);
+                    }
+                    .sheet-8{
+                        background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                        width: mpxvw(36*1.1);
+                        height: mpxvw(43*1.1);
+                        top: mpxvw(114);
+                        left: mpxvw(29);
+                        transform: rotate(23deg);
+                    }
+                    .sheet-16{
+                        background-image: url("../assets/images/teachers/decorations/sheet-16.svg");
+                        width: mpxvw(30*1.1);
+                        height: mpxvw(48*1.1);
+                        top: mpxvw(47);
+                        left: mpxvw(97);
+                        transform: rotate(-23deg);
+                    }
+                }
+                .elvina-block{
+                    .loop-line{
+                        background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                        width: mpxvw(129);
+                        height: mpxvw(54);
+                        top: mpxvw(86);
+                        left: mpxvw(28);
+                    }
+                    .sheet-8{
+                        background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                        width: mpxvw(36*1.1);
+                        height: mpxvw(43*1.1);
+                        top: mpxvw(111);
+                        left: mpxvw(21);
+                        transform: rotate(23deg);
+                    }
+                }
+            }
+        }
+    }
+    .section-methodway{
+        .section-content{
+            padding: 
+            mpxvw(52)
+            mpxvw(2)
+            mpxvw(51)
+            mpxvw(2);
+            flex-direction: column;
+            flex-grow: 1;
+            align-items: center !important;
+            .title{
+                font-family: $unbounded;
+                margin-bottom: mpxvw(25);
+            }
+            .container{
+                
+                flex-direction: column;
+                .block{
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: mpxvw(24);
+                }
+                .block-header-photo{
+                    margin-bottom: mpxvw(12);
+                }
+                
+                .block-title{
+                    font-family: $unbounded;
+                    margin-bottom: mpxvw(12);
+                    line-height: 110%;
+                }
+                .block-text{
+                    line-height: 145%;
+                    font-family: $montserrat;
+                }
+                .block-consult{
+                    flex-direction: column;
+                    width: mpxvw(302);
+                    padding: 
+                    mpxvw(36)
+                    mpxvw(19)
+                    mpxvw(21)
+                    mpxvw(19);
+                    margin-left: 0;
+                    .block-header{
+                        width: mpxvw(218) !important;
+                        .block-header-photo{
+                            background-image: url("../assets/images/methodway/common/disk.png");
+                            width: mpxvw(291);
+                            height:  mpxvw(311);
+                        }
+                    }
+                    .block-body, .block-title{
+                        margin-left: mpxvw(10);
+                        
+                    }
+                }
+                .container{
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    .block-lesson{
+                        width: mpxvw(343-38);
+                        
+                        padding: 
+                        mpxvw(21)
+                        mpxvw(10)
+                        mpxvw(33) 
+                        mpxvw(26);
+                        .block-header{
+                            order: 2;
+                            &-photo{
+                                background-image: url("../assets/images/methodway/common/boys_guitars.png");
+                                width: mpxvw(270);
+                                height:  mpxvw(249);
+                            }
+                        }
+                        .block-body{
+                            margin: 
+                            0
+                            0
+                            mpxvw(21)
+                            0;
+                            .block-title{
+                                margin: 
+                                mpxvw(2)
+                                0
+                                mpxvw(16)
+                                0;
+                                width: mpxvw(290);
+                            }
+                            .block-text{
+                                padding-right: mpxvw(10);
+                            }
+                        }
+                    }
+                    .block-lesson-format{
+                        width: mpxvw(343-16-18-40);
+                        padding: 
+                        mpxvw(20)
+                        mpxvw(45)
+                        mpxvw(18)
+                        mpxvw(27);
+                        .block-title{
+                            margin-top: mpxvw(0);
+                        }
+                        .block-header{
+                            display: none;
+                        }
+                    }
+                    .block-skills{
+                        width: mpxvw(343-21-28);
+                        padding: 
+                        mpxvw(21)
+                        mpxvw(21)
+                        mpxvw(26)
+                        mpxvw(28);
+                    }
+                    .block-concert{
+                        
+                        width: mpxvw(343-23-21);
+                        
+                        padding: 
+                        mpxvw(25)
+                        mpxvw(21)
+                        mpxvw(26)
+                        mpxvw(23);
+                        margin-right: 0;
+                        .block-header{
+                            &-photo{
+                                background-image: url("../assets/images/methodway/common/girl_micro.png");
+                                width: mpxvw(256);
+                                height:  mpxvw(279);
+                                margin: 0;
+                            }
+                        }
+                        .block-body{
+                            margin-left: mpxvw(10);
+                            margin-top: mpxvw(10);
+                        }
+                    }
+                }
+            }
+            .circle-line-rd{
+                background-image: url("../assets/images/methodway/decorations/circle_line_rd.svg");
+                width: mpxvw(71*1.2);
+                height:  mpxvw(27*1.2);
+                top: mpxvw(1138);
+                left: mpxvw(208);
+                transform: rotate(120deg);
+            }
+            .circle-line-ru{
+                background-image: url("../assets/images/methodway/decorations/circle_line_ru.svg");
+                width: mpxvw(60*0.8);
+                height:  mpxvw(72*0.8);
+                top: mpxvw(604);
+                left: mpxvw(297);
+                transform: rotate(0deg) scale(1,-1);
+            }
+            .circle-line-ru2{
+                background-image: url("../assets/images/methodway/decorations/circle_line_ru2.svg");
+                width: mpxvw(121*0.9);
+                height:  mpxvw(25*0.9);
+                top: mpxvw(120);
+                left: mpxvw(274);
+                transform: rotate(64deg) scale(1,-1);
+            }
+            .circle-line-ld{
+                background-image: url("../assets/images/methodway/decorations/circle_line_ld.svg");
+                width: mpxvw(128);
+                height:  mpxvw(78);
+                top: mpxvw(1622);
+                left: mpxvw(13);
+                transform: rotate(-30deg); 
+            }
+            .curve{
+                background-image: url("../assets/images/methodway/decorations/loop_line.svg");
+                width: mpxvw(62);
+                height:  mpxvw(93);
+                top: mpxvw(1406);
+                left: mpxvw(230);
+            }
+            .sheet-8{
+                background-image: url("../assets/images/methodway/decorations/sheet_8.svg");
+                width: mpxvw(45);
+                height:  mpxvw(54);
+                top: mpxvw(1239);
+                left: mpxvw(276);
+            }
+            .sheet-2{
+                background-image: url("../assets/images/methodway/decorations/sheet-2.svg");
+                width: mpxvw(27);
+                height:  mpxvw(47);
+                top: mpxvw(1192);
+                left: mpxvw(267);
+            }
+            .spray-down{
+                background-image: url("../assets/images/methodway/decorations/spray_down.svg");
+                width: mpxvw(28*0.8);
+                height:  mpxvw(23*0.8);
+                top: mpxvw(458);
+                left: mpxvw(290);
+                transform: rotate(114deg) scale(1,-1);
+            }
+            .spray-up{
+                background-image: url("../assets/images/methodway/decorations/spray_up.svg");
+                width: mpxvw(23);
+                height:  mpxvw(20);
+                top: mpxvw(1680);
+                left: mpxvw(287);
+                transform: rotate(180deg) scale(-1,-1);
+            }
+            .star{
+                background-image: url("../assets/images/methodway/decorations/star.svg");
+                width: mpxvw(12);
+                height:  mpxvw(15);
+                top: mpxvw(711);
+                left: mpxvw(258);
+            }
+            .underline{
+                background-image: url("../assets/images/methodway/decorations/underline.svg");
+                width: mpxvw(188);
+                height:  mpxvw(10);
+                top: mpxvw(80);
+                left: mpxvw(143);
+                z-index: -1;
+            }
+        }
+    }
+    .section-whywe{
+        .section-content>.title{
+            margin: 
+            0
+            0
+            mpxvw(64)
+            0;
+            font-family: $unbounded;
+            text-align: center;
+            flex-grow: 1;
+            font-weight: 500;
+        }
+        .section-content{
+            flex-wrap: wrap;
+            padding: 
+            mpxvw(52)
+            0
+            mpxvw(222)
+            0;
+            overflow: hidden;
+            .container{
+                flex-wrap: wrap;
+                justify-content: center;
+                .block:nth-child(-n+3){
+                    
+                    height: mpxvw(275-28-38);
+                   
+                }
+                .block:nth-last-child(-n+4){
+                   
+                    height: mpxvw(226-35-31);
+                    
+                }
+                .block:nth-last-child(1){
+               
+                    height: mpxvw(181-52-31);
+                   
+                }
+                
+                .block{
+                    width: mpxvw(343-22-43);
+                    margin: 
+                    0
+                    0
+                    mpxvw(16)
+                    0;
+                    padding: 
+                    mpxvw(26)
+                    mpxvw(35)
+                    mpxvw(19)
+                    mpxvw(27);
+                    .title{
+                        text-align: left;
+                        font-family: $unbounded;
+                        margin-bottom: mpxvw(12);
+                    }
+                    .text{
+                        line-height: 130%;
+                    }
+                }
+            }
+            .guitar{
+                background-image: url("../assets/images/whywe/decorations/guitar.svg");
+                width: mpxvw(508*0.9);
+                height:  mpxvw(271*0.9);
+                top: mpxvw(1726);
+                left: mpxvw(20);
+                transform: rotate(-5deg);
+            }
+            .loop{
+                background-image: url("../assets/images/whywe/decorations/loop.svg");
+                width: mpxvw(61*0.7);
+                height:  mpxvw(26*0.7);
+                top: mpxvw(780);
+                left: mpxvw(303);
+            }
+            .loop-line{
+                background-image: url("../assets/images/whywe/decorations/loop_line.svg");
+                width: mpxvw(59*1.2);
+                height:  mpxvw(64*1.2);
+                top: mpxvw(1620);
+                left: mpxvw(280);
+            }
+            .spray{
+                background-image: url("../assets/images/whywe/decorations/spray.svg");
+                width: mpxvw(33*1.1);
+                height:  mpxvw(16*1.1);
+                top: mpxvw(969);
+                left: mpxvw(302);
+            }
+            .hearts{
+                background-image: url("../assets/images/whywe/decorations/hearts.svg");
+                width: mpxvw(34*2.2);
+                height:  mpxvw(17*2.2);
+                top: mpxvw(528);
+                left: mpxvw(287);
+            }
+            .micro{
+                background-image: url("../assets/images/whywe/decorations/micro.svg");
+                width: mpxvw(100*1.1);
+                height:  mpxvw(200*1.1);
+                top: mpxvw(163);
+                left: mpxvw(248);
+            }
+        }
+    }
+    .section-reviews{
+        display: block;
+        .section-content{
+            display: block;
+            padding: 
+            mpxvw(52)
+            0
+            mpxvw(62)
+            0;
+          
+            .title{
+                font-family: $unbounded;
+                font-weight: 500;
+                margin-bottom: mpxvw(16);
+            }
+          .slider-content{
+           display: block;
+            .review-block{
+                position: relative;
+                width: mpxvw(343-29-24) !important;
+                min-height: mpxvw(321);
+                margin: mpxvw(12) mpxvw(6);
+                padding: 
+                mpxvw(27)
+                mpxvw(29)
+                mpxvw(20)
+                mpxvw(24);
+                .block-header{
+                    display: flex;
+                    align-items: center;
+                    .person-avatar{
+                        height: mpxvw(48);
+                        width: mpxvw(48);
+                    }
+                    .person-info{
+                        display: flex;
+                        flex-direction: column;
+                        padding: 
+                        0
+                        0
+                        0
+                        mpxvw(14);
+                        &-name{
+                            line-height: 145%;
+                            font-family: $montserrat;
+                            font-weight: 500;
+                        }
+                        &-instrument{
+                            line-height: 135%;
+                        }
+                    }
+                    margin: 
+                    0
+                    0
+                    mpxvw(15)
+                    0;
+                }
+                  &-body{
+                    max-height: mpxvw(239);
+                    overflow: hidden;
+                    .text{
+                        line-height: 145%;
+                        font-weight: 400;
+                        font-family: $montserrat;
+                    }
+                  }
+            }
+            .elena-block{
+                .sheet-2{
+                    background-image: url("../assets/images/reviews/decorations/sheet-2.svg");
+                    width: mpxvw(27);
+                    height:  mpxvw(47);
+                    top: mpxvw(30);
+                    left: mpxvw(270);
+                    transform: rotate(5deg);
+                }
+            }
+            .alex-block{
+                .sheet-8{
+                    background-image: url("../assets/images/reviews/decorations/sheet-8.svg");
+                    width: mpxvw(47*1.2);
+                    height:  mpxvw(47*1.2);
+                    top: mpxvw(30);
+                    left: mpxvw(250);
+                    
+                }
+            }
+            .dima-block{
+                .sheet-2{
+                    background-image: url("../assets/images/reviews/decorations/sheet-2.svg");
+                    width: mpxvw(27);
+                    height:  mpxvw(47);
+                    top: mpxvw(30);
+                    left: mpxvw(270);
+                    transform: rotate(5deg);
+                }
+            }
+            .lidia-block{
+                .sheet-2{
+                    background-image: url("../assets/images/reviews/decorations/sheet-2.svg");
+                    width: mpxvw(27);
+                    height:  mpxvw(47);
+                    top: mpxvw(30);
+                    left: mpxvw(270);
+                    transform: rotate(5deg);
+                }
+            }
+            .ramilya-block{
+                .sheet-8{
+                    background-image: url("../assets/images/reviews/decorations/sheet-8.svg");
+                    width: mpxvw(47*1.2);
+                    height:  mpxvw(47*1.2);
+                    top: mpxvw(30);
+                    left: mpxvw(250);
+                }
+            }
+            .elena-avatar{
+                background-image: url("../assets/images/reviews/common/elena.png");
+            }
+            .alex-avatar{
+                background-image: url("../assets/images/reviews/common/alex.png");
+            }
+            .dima-avatar{
+                background-image: url("../assets/images/reviews/common/dima.png");
+            }
+            .ramilya-avatar{
+                background-image: url("../assets/images/reviews/common/ramilya.png");
+            }
+            .lidia-avatar{
+                background-image: url("../assets/images/reviews/common/lidia.png");
+            }
+          }
+        }
+    }
+    .section-choice{
+        .section-content{
+            padding: 
+            mpxvw(45)
+            mpxvw(0)
+            mpxvw(32)
+            mpxvw(0);
+            flex-grow: 1;
+            justify-content: center;
+            .loop-line{
+                background-image: url("../assets/images/choice/decorations/loop-line-sm.svg");
+                width: mpxvw(274*0.9);
+                height: mpxvw(80*0.9);
+                top: mpxvw(735);
+                left: mpxvw(-40);
+               
+            }
+            .sheet-8{
+                background-image: url("../assets/images/choice/decorations/sheet-8.png");
+                width: mpxvw(47*0.8);
+                height: mpxvw(60*0.8);
+                top: mpxvw(887);
+                left: mpxvw(42);
+    
+            }
+            .sheet-4{
+                background-image: url("../assets/images/choice/decorations/sheet-4.png");
+                width: mpxvw(45*0.8);
+                height: mpxvw(54*0.8);
+                top: mpxvw(927);
+                left: mpxvw(62);
+            }
+            .underline{
+                background-image: url("../assets/images/choice/decorations/underline.png");
+                width: mpxvw(226);
+                height: mpxvw(5);
+                top: mpxvw(119);
+                left: mpxvw(75);
+                z-index: 1;
+            }  
+            
+        }
+        .section-content>.block{
+            width:  mpxvw(343);
+            .block-content{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .part-photo{
+                    order: 2;
+                    align-self: flex-end;
+                    .background-image{
+                        height: mpxvw(402*0.85);
+                        width: mpxvw(341*0.85);
+                        background-image: url("../assets/images/choice/sm/boy and guitar.png");
+                    }
+                }
+                .part-form{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    order: 1;
+                    padding: 
+                    mpxvw(21)
+                    mpxvw(13)
+                    mpxvw(0)
+                    mpxvw(13);
+                    .form-title{
+                        width: mpxvw(252);
+                        text-align: center;
+                        font-family: $unbounded;
+                        font-weight: 400;
+                        line-height: 120%;
+                        margin:
+                        0
+                        0
+                        mpxvw(11)
+                        0;
+                    }
+                    .form-text{
+                        line-height: 145%;
+                        font-family: $montserrat;
+                        width: mpxvw(265);
+                        text-align: center;
+                        margin: 
+                        0
+                        0
+                        mpxvw(27)
+                        0;
+                    }
+                    .form{
+                        &-input{
+                            width: mpxvw(318-(25*2));
+                            margin: 
+                            0
+                            0
+                            mpxvw(12)
+                            0;
+                        }
+                        .container{
+                            flex-direction: column;
+                            align-items: center;
+                            margin: 
+                            0
+                            0
+                            mpxvw(15)
+                            0;
+                        }
+                        .form-submit.container{
+                            .form-text{
+                                width: mpxvw(304);
+                                text-align: left;
+                            }
+                            .submit-btn{
+                                width: mpxvw(293);
+                                height: mpxvw(66);
+                                transition-property: background-color;
+                            }
+                        }
+                        
+                    }
+                    .social-links{
+                        align-self: flex-start;
+                        position: absolute;
+                        top: mpxvw(640);
+                        left: mpxvw(20);
+                        .social-link{
+                            display: inline-block;
+                            width: mpxvw(45);
+                            height: mpxvw(45);
+                            margin: 
+                                0
+                                mpxvw(5)
+                                0
+                                0;
+                            &:nth-child(1){
+                                background-image: url("../assets/images/common/social-links/tg.svg");
+                            }
+                            &:nth-child(2){
+                                background-image: url("../assets/images/common/social-links/wa.svg");
+                            }
+                        }
+                    }
+                    h2.form-text{
+                        
+                        align-self: flex-start;
+                        text-align: left;
+                        margin: 
+                        0
+                        0
+                        mpxvw(4)
+                        mpxvw(10);
+                        font-weight: 500;
+                       
+                    }
+                    h3.form-text{
+                        text-align: left;
+                        align-self: flex-start;
+                        width: auto;
+                        margin: 
+                        0
+                        0
+                        0
+                        mpxvw(10);
+                    }
+                }
+            }
+        }
+    }
+    .section-modal.active{
+        display: flex;
+    }
+    .section-modal{
+        overflow: scroll;
+        position: fixed;
+        z-index: 20;
+        top: -5vh;
+        bottom: -10vh;
+        right: 0;
+        left: 0;
+        background-color: rgba(23,23,23, .5);
+        display: none;
+        .section-content{
+            flex: 1;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            .block.active{
+                display: flex;
+            }
+            &>.block{
+                height: mpxvw(558);
+                overflow: auto;
+                // padding: 
+                //     mpxvw(15)
+                //     mpxvw(7)
+                //     mpxvw(31)
+                //     mpxvw(7);
+            }
+            .block{
+                display: none;
+                position: absolute;
+                .close-btn{
+                    position: sticky;
+                    width: mpxvw(14);
+                    height: mpxvw(14);
+                    right: mpxvw(12);
+                    top: mpxvw(12);
+                    background-image: url("../assets/images/common/close_btn.svg");
+                }
+                .block-content{
+                    padding: 
+                    mpxvw(15)
+                    mpxvw(0)
+                    mpxvw(31)
+                    mpxvw(14);
+                    .instrument-skill{
+                        line-height: 145%;
+                        padding: 
+                        mpxvw(2)
+                        mpxvw(2)
+                        mpxvw(2)
+                        mpxvw(2);
+                        display: block;
+                    }
+                    .block-header{
+                        display: flex;
+                        margin: 
+                        0
+                        0
+                        mpxvw(30)
+                        0;
+                        .teacher-avatar{
+                            width: mpxvw(185);
+                            height: mpxvw(121);
+                            margin: 
+                            0
+                            0
+                            0
+                            mpxvw(22);
+                        }
+                        .teacher-info{
+                            &-name{
+                                font-family: $unbounded;
+                            }
+                            margin-top: mpxvw(12);
+                        }    
+                    }
+                }
+                .block-body{
+                    width: mpxvw(308);
+                    .teacher-fact{
+                        line-height: 1.75;
+                        // margin-bottom: mpxvw(7);
+                    }
+                    .teacher-fact::before{
+                        content: "— ";
+                    }
+                }
+            }
+            .daniyar-block .teacher-avatar{
+                background-image: url("../assets/images/teachers/common/avatars/daniyar.png");
+            }
+            .insaf-block .teacher-avatar{
+                background-image: url("../assets/images/teachers/common/avatars/insaf.png");
+            }
+            .elmira-block .teacher-avatar{
+                background-image: url("../assets/images/teachers/common/avatars/elmira.png");
+            }
+            .bulat-block .teacher-avatar{
+                margin-left: mpxvw(50) !important; 
+                background-image: url("../assets/images/teachers/common/avatars/bulat.png");
+            }
+            .elvina-block .teacher-avatar{
+                background-image: url("../assets/images/teachers/common/avatars/elvina.png");
+            }
+            .anastasia-block .teacher-avatar{
+                background-image: url("../assets/images/teachers/common/avatars/anastasia.png");
+            }
+            .leyli-block .teacher-avatar{
+                background-image: url("../assets/images/teachers/common/avatars/leyli.png");
+            }
+            .daniyar-block .instrument-skill{
+                transform: rotate(-5deg);
+                top: mpxvw(60)
+            }
+            .bulat-block, .daniyar-block, .elmira-block, .insaf-block {
+                .instrument-skill{
+                    font-family: $montserrat;
+                }
+            }
+            .bulat-block{
+                .instrument-skill{
+                    transform: rotate(-5deg);
+                    top: mpxvw(60)
+
+                }
+            }
+            .elvina-block, .anastasia-block, .leyli-block{
+                .instrument-skill{
+                    transform: rotate(-5deg);
+                    top: mpxvw(60)
+
+                }
+            }
+            .insaf-block{
+                .instrument-skill:nth-child(1){
+                    transform: rotate(-5deg);
+                    top: mpxvw(60)
+                }
+                .instrument-skill:nth-child(2){
+                    transform: rotate(5deg);
+                    top: mpxvw(97);
+                    left: mpxvw(35);
+                }
+            }
+            .elmira-block{
+                .instrument-skill:nth-child(1){
+                    transform: rotate(-5deg);
+                    top: mpxvw(60)
+                }
+                .instrument-skill:nth-child(2){
+                    transform: rotate(5deg);
+                    top: mpxvw(97);
+                    left: mpxvw(35);
+                }
+            }
+            .daniyar-block{
+                .loop-line{
+                    background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                    width: mpxvw(129);
+                    height: mpxvw(54);
+                    top: mpxvw(89);
+                    left: mpxvw(28);
+                }
+                .sheet-8{
+                    background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                    width: mpxvw(36*1.1);
+                    height: mpxvw(43*1.1);
+                    top: mpxvw(115);
+                    left: mpxvw(28);
+                    transform: rotate(-15deg);
+                }
+            }
+            .insaf-block{
+                .loop-line{
+                    background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                    width: mpxvw(129);
+                    height: mpxvw(54);
+                    top: mpxvw(117);
+                    left: mpxvw(138);
+                    display: none
+                }
+                .sheet-8{
+                    background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                    width: mpxvw(36*1.1);
+                    height: mpxvw(43*1.1);
+                    top: mpxvw(119);
+                    left: mpxvw(24);
+                    transform: rotate(30deg);
+                }
+            }
+            .elmira-block{
+                .loop-line{
+                    background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                    width: mpxvw(129);
+                    height: mpxvw(54);
+                    top: mpxvw(89);
+                    left: mpxvw(28);
+                    display: none;
+                }
+                .sheet-8{
+                    background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                    width: mpxvw(36*1.1);
+                    height: mpxvw(43*1.1);
+                    top: mpxvw(119);
+                    left: mpxvw(24);
+                    transform: rotate(30deg);
+                }
+            }
+            .bulat-block{
+                .loop-line{
+                    background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                    width: mpxvw(129);
+                    height: mpxvw(54);
+                    top: mpxvw(89);
+                    left: mpxvw(28);
+                }
+                .sheet-8{
+                    background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                    width: mpxvw(36*1.1);
+                    height: mpxvw(43*1.1);
+                    top: mpxvw(115);
+                    left: mpxvw(24);
+                    transform: rotate(-6deg);
+                }
+                .sheet-16{
+                    background-image: url("../assets/images/teachers/decorations/sheet-16.svg");
+                    width: mpxvw(30*1.1);
+                    height: mpxvw(48*1.1);
+                    top: mpxvw(57);
+                    left: mpxvw(96);
+                    transform: rotate(-21deg);
+                }
+            }
+            .elvina-block{
+                .loop-line{
+                    background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                    width: mpxvw(129);
+                    height: mpxvw(54);
+                    top: mpxvw(89);
+                    left: mpxvw(28);
+                }
+                .sheet-8{
+                    background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                    width: mpxvw(36*1.1);
+                    height: mpxvw(43*1.1);
+                    top: mpxvw(115);
+                    left: mpxvw(24);
+                    transform: rotate(30deg);
+                }
             }
         }
     }
@@ -496,13 +2128,13 @@
                         0
                         0;
                     &:nth-child(1){
-                        background-image: url("../assets/images/footer/social-links/tg.svg");
+                        background-image: url("../assets/images/common/social-links/tg.svg");
                     }
                     &:nth-child(2){
-                        background-image: url("../assets/images/footer/social-links/wa.svg");
+                        background-image: url("../assets/images/common/social-links/wa.svg");
                     }
                     &:nth-child(3){
-                        background-image: url("../assets/images/footer/social-links/yt.svg");
+                        background-image: url("../assets/images/common/social-links/yt.svg");
                     }
                 }
             }

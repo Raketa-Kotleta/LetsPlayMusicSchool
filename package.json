@@ -18,6 +18,7 @@
     "css-loader": "^6.7.3",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "jquery": "^3.7.0",
     "mini-css-extract-plugin": "^2.7.5",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
@@ -27,8 +28,11 @@
     "webpack-dev-server": "^4.13.0"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "file-loader": "^6.2.0",
     "image-webpack-loader": "^8.1.0",
-    "slick-slider": "^1.8.2"
+    "slick-carousel": "^1.8.1",
+    "url-tilde-loader": "^0.1.1",
+    "wowjs": "^1.1.3"
   }
 }

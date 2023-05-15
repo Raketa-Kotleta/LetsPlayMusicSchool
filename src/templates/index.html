@@ -11,7 +11,7 @@
         <nav class="navbar">
             <div class="navbar-content">
                 <a href="#main" class="navbar-brand">
-                    <img src="/src/assets/images/common/logo.svg" alt="">
+                    <img src="/src/assets/images/common/logo2.svg" alt="">
                 </a>
                 <button class="navbar-toggler" toggle="#NavToggle">
                     <img class="navbar-toggler-icon" src="/src/assets/images/navbar/mobile/burger.svg" alt="">
@@ -21,21 +21,21 @@
                     <ul class="list nav-list">
                         <li class="nav-list-item"><a href="#main" class="link nav-list-link">Главная</a></li>
                         <li class="nav-list-item dropdown">
-                            <a class="link nav-list-link ">
+                            <span class="link nav-list-link ">
                                 Направления 
-                            </a>
+                            </span>
                             <span class="dropdown-icon background-image delay-200"></span>
                             <ul class="list dropdown-list">
-                                <li class="dropdown-item delay-200"><a href="" class="link dropdown-link">Гитара</a></li>
-                                <li class="dropdown-item delay-200"><a href="" class="link dropdown-link">Вокал</a></li>
-                                <li class="dropdown-item delay-200"><a href="" class="link dropdown-link">Фортепиано</a></li>
-                                <li class="dropdown-item delay-200"><a href="" class="link dropdown-link">Укулеле</a></li>
+                                <li class="dropdown-item delay-200"><a href="#courses" class="link dropdown-link">Гитара</a></li>
+                                <li class="dropdown-item delay-200"><a href="#courses" class="link dropdown-link">Вокал</a></li>
+                                <li class="dropdown-item delay-200"><a href="#courses" class="link dropdown-link">Фортепиано</a></li>
+                                <li class="dropdown-item delay-200"><a href="#courses" class="link dropdown-link">Укулеле</a></li>
                             </ul>
                         </li>
-                        <li class="nav-list-item"><a href="" class="link nav-list-link">Методика</a></li>
-                        <li class="nav-list-item"><a href="" class="link nav-list-link">Почему мы</a></li>
-                        <li class="nav-list-item"><a href="" class="link nav-list-link">Отзывы</a></li>
-                        <li class="nav-list-item"><a href="" class="link nav-list-link">Контакты</a></li>
+                        <li class="nav-list-item"><a href="#methods" class="link nav-list-link">Методика</a></li>
+                        <li class="nav-list-item"><a href="#whywe" class="link nav-list-link">Почему мы</a></li>
+                        <li class="nav-list-item"><a href="#reviews" class="link nav-list-link">Отзывы</a></li>
+                        <li class="nav-list-item"><a href="#footer" class="link nav-list-link">Контакты</a></li>
                         <li class="nav-list-item">
                             <div class="nav-call">
                                <div class="nav-call-contacts">
@@ -43,7 +43,9 @@
                                     <a class="link">Перезвонить вам?</a>
                                </div>
                                <button class="nav-call-btn">
-                                    Перезвонить
+                                    <a href="#choice" class="link">
+                                        Перезвонить
+                                    </a>
                                </button>
                             </div>
                         </li>
@@ -52,7 +54,7 @@
             </div>
         </nav>
     </header>  
-    <div class="section-main section">
+    <div class="section-main section" id="main">
         <div class="section-content">
             <div class="background-image float circle-line"></div>
             <div class="background-image float curve"></div>
@@ -63,10 +65,10 @@
             <div class="background-image float underline-top"></div>
             <div class="background-image float underline-bottom"></div>
             <div class="block float">
-                <p class="f-s-20">Гитара</p>
-                <p class="f-s-20">Вокал</p>
-                <p class="f-s-20">Укулеле</p>
-                <p class="f-s-20">Пианино</p>
+                <p class="f-s-20 f-s-14-sm">Гитара</p>
+                <p class="f-s-20 f-s-14-sm">Вокал</p>
+                <p class="f-s-20 f-s-14-sm">Укулеле</p>
+                <p class="f-s-20 f-s-14-sm">Пианино</p>
             </div>
             <div class="part-instrumental-info">
                 <div class="block bg-yellow-100 float block-instrumentals">
@@ -74,7 +76,7 @@
                 <div class="background-image girl-guitar"></div>
             </div>
             <div class="part-tagline">
-                <h1 class="f-s-90 f-s-48-sm title">
+                <h1 class="f-s-90 f-s-48-sm title" data-aos-duration="1000" data-aos="fade-down">
                     2 песни
                     <br>
                     за 4 урока
@@ -83,12 +85,12 @@
                     Предоставим инструмент на занятии и научим наслаждаться музыкой, даже если у Вас никогда не было опыта
                 </p>
                 <div class="help-buttons">
-                    <a href="#main">
+                    <a href="#consultation">
                         <button class="[ f-s-18 f-s-15-sm delay-200 bg-black-200 bg-hover-yellow-100 bg-active-black-200 active-white-100 white-100 hover-white-100 ] read-more-btn">
                             Узнать подробнее
                         </button>
                     </a>
-                    <a href="#main">
+                    <a href="#courses">
                         <button class="[ f-s-18 f-s-15-sm delay-200 bg-white-100 bg-hover-yellow-100 bg-active-black-200 active-white-100 black-100 border-hover-yellow-100 border-active-black-200 ] choose-dir-btn">
                             Выбрать направление
                         </button>
@@ -97,21 +99,775 @@
             </div>
             <div class="part-dir-info">
                 <div class="block bg-yellow-100 float block-service">
-                    <p class="f-s-20">
+                    <p class="f-s-20 f-s-14-sm">
                         Индивидуальные и  
                         групповые <br>
                         занятия
                     </p>
                     
-                    <p class="f-s-20">Группа до 3-х человек</p>
-                    <p class="f-s-20">От 5 лет</p>   
+                    <p class="f-s-20 f-s-14-sm">Группа до 3-х человек</p>
+                    <p class="f-s-20 f-s-14-sm">От 5 лет</p>   
                 </div>
                 <div class="background-image boy-guitar"></div>
             </div>
             
         </div>
     </div>
-    <footer class="footer">
+    <div class="section section-consultation" id="consultation">
+        <div class="section-content">
+            <div class="background-image float sheet-16"></div>
+            <div class="background-image float sheet-8"></div>
+            <div class="background-image float circle-line"></div>
+            <div class="background-image float underline"></div>
+            <div class="background-image float underline-bottom"></div>
+            <div class="block float bg-yellow-100" id="block-tg-link">
+                <p class="f-s-20 f-s-14-sm black-100">
+                    Вы можете связаться с <br> нами в <a href="" class="black-100">Telegram</a>
+                </p>
+            </div>
+            <div class="block bg-gray-100">
+                <div class="block-content">
+                    <div class="part-photo">
+                        <div class="background-image"></div>
+                    </div>
+                    <div class="part-form">
+                        <h1 class="form-title f-s-32 f-s-24-sm">Оставьте заявку на бесплатную консультацию</h1>
+                        <div class="f-s-18 form-text f-s-14-sm">Разберем конкретно Вашу ситуацию и подберем формат занятий и программу. Отправим видеоурок в подарок</div>
+                        <form action="/" class="form">
+                            <label for="name" class="label">
+                                <input type="text" id="name" pattern="^[-a-zA-Z\u0410-\u044F`]+$"   placeholder="Имя" class="form-input input-name bg-white-100 border-gray-500 border-focus-yellow-100 border-invalid-red-100">
+                            </label>
+                            <div class="container">
+                                <label for="tel" class="label">
+                                    <input type="tel" id="tel" pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$" placeholder="Телефон" class="form-input input-tel bg-white-100 border-gray-500 border-focus-yellow-100 border-invalid-red-100">
+                                </label>
+                                <label for="email" class="label">
+                                    <input type="email" id="email" placeholder="Email" class="form-input input-email bg-white-100 border-gray-500 border-focus-yellow-100 border-invalid-red-100">
+                                </label>
+                               
+                            </div>
+                            <div class="container form-submit">
+                                <span class="f-s-16 f-s-14-sm gray-400 form-text">Нажимая кнопку, Вы соглашаетесь на <a class="gray-400" href="https://docs.yandex.ru/docs/view?url=ya-disk-public%3A%2F%2Frp1tlCTMoiWckDXxmtK30EChoBoSWFMdEell4fA%2F7q5Z%2B%2BL5txCWAIzjzBBiIyEpq%2FJ6bpmRyOJonT3VoXnDag%3D%3D%3A%2F%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D1%81%D0%B1%D0%BE%D1%80%D0%B0%20%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85.docx&name=%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D1%81%D0%B1%D0%BE%D1%80%D0%B0%20%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85.docx&nosw=1">обработку персональных данных</a></span>
+                                <button type="submit" class="[ f-s-18 f-s-15-sm delay-200 bg-black-200 bg-hover-yellow-100 bg-active-black-200 active-white-100 white-100 hover-white-100 ] submit-btn">
+                                    Узнать подробнее
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-course" id="courses">
+        <div class="section-content">
+            <h1 class="title f-s-60 f-s-32-sm" data-aos-duration="1000" data-aos="fade-down">
+                Направления занятий
+            </h1>
+            <div class="block bg-gray-100">
+                <form action="" class="form-control">
+                    <div class="form-control-content">
+                        <input type="radio" name="course" id="guitar" class="radio radio-guitar" checked>
+                        <label for="guitar" class="radio-label radio-label-guitar bg-white-100 black-100 f-s-16 f-s-14-sm">Гитара</label>
+                        <input type="radio" name="course" id="vocale" class="radio">
+                        <label for="vocale" class="radio-label-vocale radio-label bg-white-100 black-100 f-s-16 f-s-14-sm">Вокал</label>
+                        <input type="radio" name="course" id="piano" class="radio">
+                        <label for="piano" class="radio-label-piano radio-label bg-white-100 black-100 f-s-16 f-s-14-sm">Пианино</label>
+                        <input type="radio" name="course" id="ukulele" class="radio">
+                        <label for="ukulele" class="radio-label-ukulele radio-label bg-white-100 black-100 f-s-16 f-s-14-sm">Укулеле</label>
+                    </div>
+                </form>
+                <div class="block-content content-course content-course-guitar active">
+                    <div class="background-image float sheet-2"></div>
+                    <div class="background-image float key"></div>
+                    <div class="background-image float spray"></div>
+                    <div class="background-image float zig-zag"></div>
+                    <div class="block-header">
+                        <div class="background-image block-photo"></div>
+                    </div>
+                    <div class="block-body">
+                        <div class="block-title f-s-48 f-s-28-sm">Гитара</div>
+                        <div class="block-text f-s-18 f-s-15-sm">
+                            Хотите играть и петь песни, удивлять своих знакомых, покорять сердца и просто завести для себя новое хобби? 
+                            <br>
+                            <br>
+                            В нашей студии есть акустические и классические гитары, гитары для детей и электрогитары. Предоставим на занятии инструмент, чтобы Вам не пришлось приносить свой, научитесь играть любимое произведение или выберите уже готовый репертуар! Мы гарантируем результат и удовольствие от уроков уже с первых занятий. Берем с 7 лет на индивидуальные\групповые а также онлайн занятия.
+                            <br>
+                            <br>
+                            Занятия по гитаре также развивают личные качества: стратегическое мышление, развитое чувство ритма, уверенность, внимательность и дисциплину
+                        </div>
+                        <button class="[ f-s-18 f-s-15-sm delay-200 bg-black-200 bg-hover-yellow-100 bg-active-black-200 active-white-100 white-100 hover-white-100 ] submit-btn">
+                            Записаться на урок
+                        </button>
+                    </div>
+                </div>
+                <div class="block-content content-course content-course-vocale">
+                    <div class="background-image float sheet-2"></div>
+                    <div class="background-image float key"></div>
+                    <div class="background-image float spray"></div>
+                    <div class="background-image float zig-zag"></div>
+                    <div class="block-header">
+                        <div class="background-image block-photo"></div>
+                    </div>
+                    <div class="block-body">
+                        <div class="block-title f-s-48 f-s-28-sm">Вокал</div>
+                        <div class="block-text f-s-18 f-s-15-sm">
+                            Ваша душа хочет петь, не верите? Мы Вам докажем , что петь ДАНО и покажем , как может звучать Ваш голос уже после первого урока! Мы обучаем по современным методикам, по индивидуальным и групповым (до 3х человек) форматам занятий
+                            <br>
+                            <br>
+                            Занятия по вокалу развивают качества: красивая речь и дикция, развитое чувство ритма и уверенность, коммуникабельность
+                        </div>
+                        <button class="[ f-s-18 f-s-15-sm delay-200 bg-black-200 bg-hover-yellow-100 bg-active-black-200 active-white-100 white-100 hover-white-100 ] submit-btn">
+                            Записаться на урок
+                        </button>
+                    </div>
+                </div>
+                <div class="block-content content-course content-course-piano ">
+                    <div class="background-image float sheet-2"></div>
+                    <div class="background-image float key"></div>
+                    <div class="background-image float spray"></div>
+                    <div class="background-image float zig-zag"></div>
+                    <div class="block-header">
+                        <div class="background-image block-photo"></div>
+                    </div>
+                    <div class="block-body">
+                        <div class="block-title f-s-48 f-s-28-sm">Фортепиано</div>
+                        <div class="block-text f-s-18 f-s-15-sm">
+                            С помощью фортепиано Вы можете сочинять песни, акомпанировать себе и петь, выучить популярные и классические произведения и вообще — сыграть все, что вздумается! Наш подход в освоении фортепиано заключается в последовательном развитии координации рук, чувства ритма, слуха и чтения музыкальных записей
+                            <br>
+                            <br>
+                            Занятия по фортепиано развивают качества: стратегическое мышление, чувство ритма, уверенность и дисциплину, внимательность
+                            
+                        </div>
+                        <button class="[ f-s-18 f-s-15-sm delay-200 bg-black-200 bg-hover-yellow-100 bg-active-black-200 active-white-100 white-100 hover-white-100 ] submit-btn">
+                            Записаться на урок
+                        </button>
+                    </div>
+                </div>
+                <div class="block-content content-course content-course-ukulele">
+                    <div class="background-image float sheet-2"></div>
+                    <div class="background-image float key"></div>
+                    <div class="background-image float spray"></div>
+                    <div class="background-image float zig-zag"></div>
+                    <div class="block-header">
+                        <div class="background-image block-photo"></div>
+                    </div>
+                    <div class="block-body">
+                        <div class="block-title f-s-48 f-s-28-sm">Укулеле</div>
+                        <div class="block-text f-s-18 f-s-15-sm">
+                            Освоить укулеле за месяц и акомпанировать себе, играя любимые песни — не фантазия, а отработанная методика
+                            Просто попробуйте подержать в руках этот компактный инструмент и Вы влюбитесь в его звучание и простоту.
+                            <br>
+                            <br>
+                            А еще этот инструмент подходит даже детям от 3-4х лет.
+                            <br>
+                            <br>
+                            Занятия по укулеле также развивают личные качества: стратегическое мышление, развитое чувство ритма, уверенность и дисциплину
+                        </div>
+                        <button class="[ f-s-18 f-s-15-sm delay-200 bg-black-200 bg-hover-yellow-100 bg-active-black-200 active-white-100 white-100 hover-white-100 ] submit-btn">
+                            Записаться на урок
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-teachers section">
+        <div class="section-content">
+            <div class="background-image float loop-line-2"></div>
+            <h1 class="title f-s-60 f-s-32-sm" data-aos-duration="1000" data-aos="fade-down">Наши преподаватели</h1>
+            <div class="slider-content">
+                <div class="block bg-black-100 white-100 teacher-block daniyar-block">
+                    <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Гитара</div>
+                    <div class="background-image float loop-line"></div>
+                    <div class="background-image float sheet-8"></div>
+                    <div class="block-header">
+                        <div class="teacher-info">
+                            <span class="teacher-info-name f-s-48 f-s-20-sm">Данияр</span>
+                        </div>
+                        <div class="background-image teacher-avatar "></div>
+                    </div>
+                    <div class="block-body">
+                        <p class="teacher-fact f-s-16 f-s-14-sm">Основатель проекта и собственной методики преподавания</p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm">Опыт преподавания 10 лет, опыт игры на гитаре 17 лет</p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm">Окончил музыкальную школу по классу гитара и учился...</p>
+                    </div>
+                    <div class="block-footer">
+                        <button class="read-more f-s-14 f-s-13-sm white-100">
+                            Читать полностью
+                        </button>
+                    </div>
+                </div>
+                <div class="block bg-black-100 white-100 teacher-block insaf-block">
+                    <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Гитара</div>
+                    <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Фортепиано</div>
+                    <div class="background-image float loop-line"></div>
+                    <div class="background-image float sheet-8"></div>
+                    <div class="block-header">
+                        <div class="teacher-info">
+                            <span class="teacher-info-name f-s-48 f-s-20-sm">Инсаф</span>
+                        </div>
+                        <div class="background-image teacher-avatar "></div>
+                    </div>
+                    <div class="block-body">
+                        <p class="teacher-fact f-s-16 f-s-14-sm">Гран-призер и лауреат и многочисленных музыкальных конкурсов и фестивалей, призер международных конкурсов по фортепиано</p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm">Инсаф обожает музыку в любых проявлениях, легко подберет...</p>
+                    </div>
+                    <div class="block-footer">
+                        <button class="read-more f-s-14 f-s-13-sm white-100">
+                            Читать полностью
+                        </button>
+                    </div>
+                </div>
+                <div class="block bg-black-100 white-100 teacher-block elmira-block">
+                    <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Вокал</div>
+                    <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Укулеле</div>
+                    <div class="background-image float loop-line"></div>
+                    <div class="background-image float sheet-8"></div>
+                    <div class="block-header">
+                        <div class="teacher-info">
+                            <span class="teacher-info-name f-s-48 f-s-20-sm">Эльмира</span>
+                        </div>
+                        <div class="background-image teacher-avatar "></div>
+                    </div>
+                    <div class="block-body">
+                        <p class="teacher-fact f-s-16 f-s-14-sm">Эльмира является лауреатом и гран-призером Всероссийских и международных конкурсов и фестивалей</p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm">Принимала участие в телевизионных музыкальных конкурсах...</p>
+                    </div>
+                    <div class="block-footer">
+                        <button class="read-more f-s-14 f-s-13-sm white-100">
+                            Читать полностью
+                        </button>
+                    </div>
+                </div>
+                <div class="block bg-black-100 white-100 teacher-block bulat-block">
+                    <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Гитара</div>
+                    <div class="background-image float loop-line"></div>
+                    <div class="background-image float sheet-8"></div>
+                    <div class="background-image float sheet-16"></div>
+                    <div class="block-header">
+                        <div class="teacher-info">
+                            <span class="teacher-info-name f-s-48 f-s-20-sm">Булат</span>
+                        </div>
+                        <div class="background-image teacher-avatar "></div>
+                    </div>
+                    <div class="block-body">
+                        <p class="teacher-fact f-s-16 f-s-14-sm">Выпускник музыкальной школы по классической гитаре, лауреат всероссийских конкурсов и фестивалей</p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm">Булат обладает терпеливым и внимательным характером...</p>
+                    </div>
+                    <div class="block-footer">
+                        <button class="read-more f-s-14 f-s-13-sm white-100">
+                            Читать полностью
+                        </button>
+                    </div>
+                </div>
+                <div class="block bg-black-100 white-100 teacher-block elvina-block block-two-decorations">
+                    <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Вокал</div>
+                    <div class="background-image float loop-line"></div>
+                    <div class="background-image float sheet-8"></div>
+                    <div class="block-header">
+                        <div class="teacher-info">
+                            <span class="teacher-info-name f-s-48 f-s-20-sm">Эльвина </span>
+                        </div>
+                        <div class="background-image teacher-avatar "></div>
+                    </div>
+                    <div class="block-body">
+                        <p class="teacher-fact f-s-16 f-s-14-sm">
+                            Эстрадно-джазовая певица
+                        </p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm">
+                            Образование : Музыкальный колледж, эстрадное отделение    
+                        </p>
+                        
+                        <p class="teacher-fact f-s-16 f-s-14-sm">
+                            Лауреат республиканских, российских, международных конкурсов...   
+                        </p>
+                    </div>
+                    <div class="block-footer">
+                        <button class="read-more f-s-14 f-s-13-sm white-100">
+                            Читать полностью
+                        </button>
+                    </div>
+                </div>
+                <div class="block bg-black-100 white-100 teacher-block anastasia-block block-two-decorations">
+                    <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Вокал</div>
+                    <div class="background-image float loop-line"></div>
+                    <div class="background-image float sheet-8"></div>
+                    <div class="block-header">
+                        <div class="teacher-info">
+                            <span class="teacher-info-name f-s-48 f-s-20-sm">Анастасия </span>
+                        </div>
+                        <div class="background-image teacher-avatar "></div>
+                    </div>
+                    <div class="block-body">
+                        <p class="teacher-fact f-s-16 f-s-14-sm">
+                            Певица Республики Татарстан 
+                        </p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm">
+                            Номинант музыкальных премий TMTV и «Милли»    
+                        </p>
+                        
+                        <p class="teacher-fact f-s-16 f-s-14-sm">
+                            Её песни и клипы вы можете слышать и видеть на всех теле и радио...
+                        </p>
+                    </div>
+                    <div class="block-footer">
+                        <button class="read-more f-s-14 f-s-13-sm white-100">
+                            Читать полностью
+                        </button>
+                    </div>
+                </div>
+                <div class="block bg-black-100 white-100 teacher-block leyli-block block-two-decorations">
+                    <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Вокал</div>
+                    <div class="background-image float loop-line"></div>
+                    <div class="background-image float sheet-8"></div>
+                    <div class="block-header">
+                        <div class="teacher-info">
+                            <span class="teacher-info-name f-s-48 f-s-20-sm">Лейли </span>
+                        </div>
+                        <div class="background-image teacher-avatar "></div>
+                    </div>
+                    <div class="block-body">
+                        <p class="teacher-fact f-s-16 f-s-14-sm">
+                            Выпускница Консерватории и Педагогического института
+                        </p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm">
+                            Преподаватель первой квалификационной категории   
+                        </p>
+                        
+                        <p class="teacher-fact f-s-16 f-s-14-sm">
+                            Опыт преподавания более 10 лет, певица театра и государственного...   
+                        </p>
+                    </div>
+                    <div class="block-footer">
+                        <button class="read-more f-s-14 f-s-13-sm white-100">
+                            Читать полностью
+                        </button>
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+    <div class="section section-methodway" id="methods">
+        <div class="section-content">
+            <div class="background-image float circle-line-rd"></div>
+            <div class="background-image float circle-line-ru"></div>
+            <div class="background-image float circle-line-ru2"></div>
+            <div class="background-image float circle-line-ld"></div>
+            <div class="background-image float curve"></div>
+            <div class="background-image float sheet-8"></div>
+            <div class="background-image float sheet-2"></div>
+            <div class="background-image float spray-down"></div>
+            <div class="background-image float spray-up"></div>
+            <div class="background-image float star"></div>
+            <div class="background-image float underline"></div>
+            <h1 class="title f-s-60 f-s-32-sm" data-aos-duration="1000" data-aos="fade-down">Путь методики</h1>
+            <div class="container">
+                <div class="block bg-gray-100 block-consult">
+                    <div class="block-header">
+                        <div class="background-image block-header-photo">
+                        </div>
+                        <div class="block-title f-s-32 f-s-28-sm black-100">
+                           Консультация     
+                        </div>
+                    </div>
+                    <div class="block-body">
+                        <div class="block-text f-s-18 f-s-15-sm black-100">
+                            Если Вы не определились, поможем Вам выбрать подходящее направление и отправим бонусное видео, чтобы стало понятнее, что будет на вашем первом уроке
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="block bg-black-100 block-lesson">
+                        <div class="block-header">
+                            <div class="background-image block-header-photo">
+                            </div>
+                        </div>
+                        <div class="block-body">
+                            <div class="block-title f-s-32 f-s-28-sm white-100">
+                                Пробное занятие    
+                            </div>
+                            <div class="block-text f-s-18 f-s-15-sm white-100">
+                                Попрактикуемся, чтобы Вы освоили базу и сыграли свою первую песню
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block bg-gray-100 block-lesson-format">
+                        <div class="block-header">
+                            <div class="background-image block-header-photo">
+                        </div>
+                            
+                        </div>
+                        <div class="block-body">
+                            <div class="block-title f-s-32 f-s-28-sm black-100">
+                                Выберем график и формат занятий    
+                            </div>
+                            <div class="block-text f-s-18 f-s-15-sm black-100">
+                                Найдем удобное для Вас время, формат уроков и регулярность занятий так, чтобы максимально эффективно двигаться вперед после каждого урока
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block bg-gray-100 block-skills">
+                        <div class="block-header">
+                            <div class="background-image block-header-photo">
+                            </div>
+                        </div>
+                        <div class="block-body">
+                            <div class="block-title f-s-32 f-s-28-sm black-100">
+                                Развитие навыков   
+                            </div>
+                            <div class="block-text f-s-18 f-s-15-sm black-100">
+                                Отслеживаем результаты в игровой форме, и поддерживаем связь с Вами 24/7
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block bg-yellow-100 block-concert">
+                        <div class="block-header">
+                            <div class="background-image block-header-photo">
+                            </div>
+                            
+                        </div>
+                        <div class="block-body">
+                            <div class="block-title f-s-32 f-s-28-sm black-100">
+                                Отчетный концерт   
+                            </div>
+                            <div class="block-text f-s-18 f-s-15-sm black-100">
+                                По мере готовности песен Вы можете выступать на квартирниках, собираться в неформальной атмосфере с другими учениками студии и весело проводить время
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-whywe" id="whywe">
+        <div class="section-content">
+            <div class="background-image float guitar"></div>
+            <div class="background-image float loop"></div>
+            <div class="background-image float loop-line"></div>
+            <div class="background-image float spray"></div>
+            <div class="background-image float hearts"></div>
+            <div class="background-image float micro"></div>
+            <h1 class="title f-s-60 f-s-32-sm" data-aos-duration="1000" data-aos="fade-down">Почему мы?</h1>
+            <div class="container">
+                <div class="block bg-gray-100">
+                    <h1 class="title black-100 f-s-32 f-s-28-sm">Простота в обучении</h1>
+                    <p class="text f-s-15-sm f-s-20">Каждая тема, применимая на практике, дается только по необходимости и объясняется простым языком, чтобы даже ребенок мог разобраться</p>
+                </div>
+                <div class="block bg-gray-100">
+                    <h1 class="title black-100 f-s-32 f-s-28-sm">Только по любви</h1>
+                    <p class="text f-s-15-sm f-s-20">Вы сами выбираете что хотите учить и до какого уровня хотите развиться, мы же — исходя из Ваших целей помогаем достичь их или предложим уже готовый репертуар</p>
+                </div>
+                <div class="block bg-gray-100">
+                    <h1 class="title black-100 f-s-32 f-s-28-sm">Любой уровень</h1>
+                    <p class="text f-s-15-sm f-s-20">По мере готовности песен будете выступать на квартирниках, собираться в неформальной атмосфере с другими учениками студии и весело проводить время</p>
+                </div>
+                <div class="block bg-gray-100">
+                    <h1 class="title black-100 f-s-32 f-s-28-sm">Удобное место</h1>
+                    <p class="text f-s-15-sm f-s-20">Занимайтесь в оборудованной студии в самом центре города или не выходя из дома\офиса</p>
+                </div>
+                <div class="block bg-gray-100">
+                    <h1 class="title black-100 f-s-32 f-s-28-sm">Любим свое дело</h1>
+                    <p class="text f-s-15-sm f-s-20">Нас никто не заставляет преподавать или узнавать, как у Вас дела, мы делимся секретами и общаемся только потому, что мы действительно это любим!</p>
+                </div>
+                <div class="block bg-gray-100">
+                    <h1 class="title black-100 f-s-32 f-s-28-sm">Помогаем 24 на 7</h1>
+                    <p class="text f-s-15-sm f-s-20">Решили позаниматься дома самостоятельно, но не понимаете, что делаете не так? Мы поможем Вам разобраться удаленно</p>
+                </div>
+                <div class="block bg-black-100">
+                    <h1 class="title black-100 f-s-32 f-s-28-sm white-100">Гибкие цены</h1>
+                    <p class="text f-s-15-sm f-s-20 white-100">Каждый сможет исполнить свою мечту, несмотря на возможности</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-reviews" id="reviews">
+        <div class="section-content">
+            <h1 class="title f-s-60 f-s-32-sm" data-aos-duration="1000" data-aos="fade-down">Отзывы</h1>
+            <div class="slider-content">
+                <div class="block bg-gray-100 elena-block review-block">
+                    <div class="background-image float sheet-2"></div>
+                    <div class="block-header bg-gray-100">
+                        <div class="person-avatar elena-avatar background-image"></div>
+                        <div class="person-info bg-gray-100">
+                            <span class="person-info-name f-s-18">Елена</span>
+                            <span class="person-info-instrument f-s-14 gray-400">Гитара</span>
+                        </div>
+                    </div>
+                    <div class="review-block-body">
+                        <div class="text blac-100 f-s-16 f-s-15-sm">
+                            Почему преподаватели в музыкальных школах так не умеют? До и после занятий инструментом в музыкалке только слезы и как результат брошенная музыкалка. А тут ребенок максимально счастлив, на занятие идет как на праздник.
+                        </div>
+                    </div>
+                </div>
+                <div class="block bg-gray-100 review-block">
+                    <div class="block-header alex-block bg-gray-100">
+                        <div class="background-image float sheet-8"></div>
+                        <div class="person-avatar alex-avatar background-image"></div>
+                        <div class="person-info bg-gray-100">
+                            <span class="person-info-name f-s-18">Александр</span>
+                            <span class="person-info-instrument f-s-14 gray-400">Гитара</span>
+                        </div>
+                    </div>
+                    <div class="review-block-body">
+                        <div class="text blac-100 f-s-16 f-s-15-sm">
+                            Посетил первое занятие, сказать что мне понравилось, ничего не сказать! Во-первых, все структурировано! Очень доходчиво! Сыграли песню!! Отправил ссылку на собственный (ПРОФЕССИОНАЛЬНЫЙ) видеоурок, где еще раз могу закрепить пройденное.
+                            <br>
+                            Получил презентацию урока.
+                            <br>
+                            Спасибо!
+                        </div>
+                    </div>
+                </div>
+                <div class="block bg-gray-100 review-block">
+                    <div class="block-header dima-block bg-gray-100">
+                        <div class="background-image float sheet-2"></div>
+                        <div class="person-avatar dima-avatar background-image"></div>
+                        <div class="person-info bg-gray-100">
+                            <span class="person-info-name f-s-18">Дмитрий</span>
+                            <span class="person-info-instrument f-s-14 gray-400">Пианино</span>
+                        </div>
+                    </div>
+                    <div class="review-block-body">
+                        <div class="text blac-100 f-s-16 f-s-15-sm">
+                            Рекомендую студию и преподавателей тем, кто действительно хочет научиться играть и получить результат за короткий срок. Методика очень эффективная, понятная даже тем, кто начинает с нуля без знаний нотной грамоты. Занятия проходят интересно, дети сами выбирают ту музыку, какую им нравится играть, а не как в музыкальной школе, что заставляют то и играют. Проверено на своих трех детях, все трое занимаются здесь, все начинали с нуля и уже играют довольно сложные песни, я очень довольна результатом. Заниматься в новой студии стало еще лучше, удобные просторные помещения, есть все необходимые инструменты и инвентарь, есть зона ожидания для родителей, расположение студии очень удобное в самом центре недалеко от Кремля, рядом есть парковки. Преподаватели общаются с детьми очень дружелюбно, без всякого давления, дети с большим удовольствием идут на занятия, а это очень важно, ведь именно когда есть желание и интерес появляются результаты👍🏻
+                        </div>
+                    </div>
+                </div>
+                <div class="block bg-gray-100 ramilya-block review-block">
+                    <div class="background-image float sheet-8"></div>
+                    <div class="block-header bg-gray-100">
+                        <div class="person-avatar ramilya-avatar background-image"></div>
+                        <div class="person-info bg-gray-100">
+                            <span class="person-info-name f-s-18">Рамиля</span>
+                            <span class="person-info-instrument f-s-14 gray-400">Вокал</span>
+                        </div>
+                    </div>
+                    <div class="review-block-body">
+                        <div class="text blac-100 f-s-16 f-s-15-sm">
+                            Тем, кто давно ищет музыкальную студию, которой можно было бы спокойно доверить свое обучение и быть уверенным в получении результата - рекомендую LetsPlay! 
+Преподаватели очень классные, открытые ребята, на занятиях всегда дружелюбная атмосфера - здесь понимаешь, что с тобой хотят поделиться знаниями и радуются твоим успехам вместе с тобой)
+                        </div>
+                    </div>
+                </div>
+                <div class="block bg-gray-100 lidia-block review-block">
+                    <div class="background-image float sheet-2"></div>
+                    <div class="block-header bg-gray-100">
+                        <div class="person-avatar lidia-avatar background-image"></div>
+                        <div class="person-info bg-gray-100">
+                            <span class="person-info-name f-s-18">Лидия</span>
+                            <span class="person-info-instrument f-s-14 ">Укулеле</span>
+                        </div>
+                    </div>
+                    <div class="review-block-body">
+                        <div class="text blac-100 f-s-16 f-s-15-sm">
+                            Мнение педагога. Занятия хорошо структурированы, идут от простого к сложному, видна отличная музыкальная база. В конце урока ученик получает распечатку — напоминалку с тем, что проходили на занятии
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-choice" id="choice">
+        <div class="section-content">
+            <div class="background-image float sheet-8"></div>
+            <div class="background-image float sheet-4"></div>
+            <div class="background-image float loop-line"></div>
+            <div class="background-image float underline"></div>
+            <div class="block bg-gray-100">
+                <div class="block-content">
+                    <div class="part-photo">
+                        <div class="background-image"></div>
+                    </div>
+                    <div class="part-form">
+                        <h1 class="form-title f-s-32 f-s-24-sm">Сложно определиться?</h1>
+                        <div class="f-s-18 form-text f-s-14-sm">Закажите звонок и мы ответим на оставшиеся вопросы</div>
+                        <form action="/" class="form">
+                            <label for="name" class="label">
+                                <input type="text" id="name2" pattern="^[-a-zA-Z\u0410-\u044F`]+$"   placeholder="Имя" class="form-input input-name bg-white-100 border-gray-500 border-focus-yellow-100 border-invalid-red-100">
+                            </label>
+                            
+                            <div class="container">
+                               <label for="tel2" class="label">
+                                <input type="tel" id="tel2" pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$" placeholder="Телефон" class="form-input input-tel bg-white-100 border-gray-500 border-focus-yellow-100 border-invalid-red-100">
+                               </label>
+                                <label for="email2" class="label">
+                                    <input type="email" id="email2" placeholder="Email" class="form-input input-email bg-white-100 border-gray-500 border-focus-yellow-100 border-invalid-red-100">
+                                </label>
+                            </div>
+                            <div class="container form-submit">
+                                <span class="f-s-16 f-s-14-sm gray-400 form-text">Нажимая кнопку, Вы соглашаетесь на <a class="gray-400" href="">обработку персональных данных</a></span>
+                                <button type="submit" class="[ f-s-18 f-s-15-sm delay-200 bg-black-200 bg-hover-yellow-100 bg-active-black-200 active-white-100 white-100 hover-white-100 ] submit-btn">
+                                    Отправить
+                                </button>
+                            </div>
+                        </form>
+                        <h2 class="f-s-18 f-s-16-sm form-text">Не хотите оставлять номер?</h2>
+                        <h3 class="f-s-16 f-s-15-sm form-text">Вы также можете с нами связаться в удобном мессенджере </h3>
+                        <div class="social-links">
+                            <a href="" class="link social-link background-image"></a>
+                            <a href="" class="link social-link background-image"></a>     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-modal section">
+        <div class="section-content">
+             <div class="float modal-block block bg-black-100 daniyar-block">
+                 <div class="block-content">
+                    <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Гитара</div>
+                    <div class="background-image float loop-line"></div>
+                    <div class="background-image float sheet-8"></div>
+                    <div class="background-image float sheet-16"></div>
+                    <div class="block-header">
+                        <div class="teacher-info">
+                            <span class="teacher-info-name f-s-48 f-s-20-sm white-100">Данияр</span>
+                        </div>
+                        <div class="background-image teacher-avatar "></div>
+                    </div>
+                    <div class="block-body">
+                        <p class="teacher-fact f-s-16 f-s-14-sm white-100">Основатель проекта и собственной методики преподавания</p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm white-100">Опыт преподавания 10 лет, опыт игры на гитаре 17 лет</p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm white-100">Окончил музыкальную школу по классу гитара и учился у таких преподавателей как Иван Захаренко (YouTube "Ваня Научи") , Максим Ярушкин (YouTube "GoFingerstyle") , Tobias Rauscher (YouTube "Tobias Rauscher")</p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm white-100">Является лауреатом и призером международных и Всероссийских фестивалей</p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm white-100">Солист кавер группы "Friends"</p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm white-100">Создает аранжировки для своих учеников и может подготовить к конкурсам за короткий промежуток времени даже с полного нуля</p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm white-100">«Люблю помогать своим ученикам достигать целей, что помогает тренировать все необходимые качества и навыки в музыке и в бизнесе\работе»</p>
+                    </div>
+                 </div>
+             </div>
+             <div class="float modal-block block bg-black-100 insaf-block">
+                <div class="block-content">
+                   <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Гитара</div>
+                   <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Фортепиано</div>
+                   <div class="background-image float loop-line"></div>
+                    <div class="background-image float sheet-8"></div>
+                    <div class="background-image float sheet-16"></div>
+                   <div class="block-header">
+                       <div class="teacher-info">
+                           <span class="teacher-info-name f-s-48 f-s-20-sm white-100">Инсаф</span>
+                       </div>
+                       <div class="background-image teacher-avatar "></div>
+                   </div>
+                   <div class="block-body">
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Гран-призер и лауреат и многочисленных музыкальных конкурсов и фестивалей, призер международных конкурсов по фортепиано</p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Инсаф обожает музыку в любых проявлениях, легко подберет вашу любимую песню и на молниеносно придумывает арранжировки</p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Большой преподавательский опыт (опыт преподавания в ДМШ и в частной музыкальной школе)</p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Играет в любых жанрах и стилях, владеет техникой «фингерстайл»</p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Инсаф комуникабельный и легко обьясняет самые сложные вещи</p>
+                       
+                   </div>
+                </div>
+            </div>
+            <div class="float modal-block block bg-black-100 elmira-block">
+                <div class="block-content">
+                   <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Вокал</div>
+                   <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Укулеле</div>
+                   <div class="background-image float loop-line"></div>
+                    <div class="background-image float sheet-8"></div>
+                    <div class="background-image float sheet-16"></div>
+                   <div class="block-header">
+                       <div class="teacher-info">
+                           <span class="teacher-info-name f-s-48 f-s-20-sm white-100">Эльмира</span>
+                       </div>
+                       <div class="background-image teacher-avatar "></div>
+                   </div>
+                   <div class="block-body">
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Эльмира является лауреатом и гран-призером Всероссийских и международных конкурсов и фестивалей</p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Принимала участие в телевизионных музыкальных конкурсах , на данный момент солистка кавер-группы «ЮКИ» и является сольным исполнителем под псевдонимом «Elsha»</p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Преподавательский опыт по вокалу и игре на укулеле</p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Эльмира научит Вас петь чисто и аккомпанировать себе с помощью укулеле</p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Подготовит к конкурсам и расскажет секреты в исполнительском мастерстве</p>
+                   </div>
+                </div>
+            </div>
+            <div class="float modal-block block bg-black-100 bulat-block">
+                <div class="block-content">
+                   <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Гитара</div>
+                   <div class="background-image float loop-line"></div>
+                    <div class="background-image float sheet-8"></div>
+                    <div class="background-image float sheet-16"></div>
+                   <div class="block-header">
+                       <div class="teacher-info">
+                           <span class="teacher-info-name f-s-48 f-s-20-sm white-100">Булат</span>
+                       </div>
+                       <div class="background-image teacher-avatar "></div>
+                   </div>
+                   <div class="block-body">
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Выпускник музыкальной школы по классической гитаре, лауреат всероссийских конкурсов и фестивалей</p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Булат обладает терпеливым и внимательным характером, вкупе с большим опытом в преподавании и методичному подходу максимально эффективно и быстро научит Вас играть на гитаре</p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Булат любит любую музыку, владеет техниками множества жанров, однако отдает предпочтение классической и электро-гитаре</p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">«Я занимаюсь любимым делом, обожаю открывать людям глаза на что то новое»</p>
+                   </div>
+                </div>
+            </div>
+            <div class="float modal-block block bg-black-100 elvina-block block-two-decorations">
+                <div class="block-content">
+                   <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Вокал</div>
+                   <div class="background-image float loop-line"></div>
+                    <div class="background-image float sheet-8"></div>
+                    <div class="background-image float sheet-16"></div>
+                   <div class="block-header">
+                       <div class="teacher-info">
+                           <span class="teacher-info-name f-s-48 f-s-20-sm white-100">Эльвина</span>
+                       </div>
+                       <div class="background-image teacher-avatar "></div>
+                   </div>
+                   <div class="block-body">
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Эстрадно-джазовая певица.</p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Образование : Музыкальный колледж, эстрадное отделение </p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Лауреат республиканских, российских, международных конкурсов. </p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Занимается музыкой более 16 лет, поет на сцене с 7 лет 
+                        Поет в филармонии с джаз-оркестром, в музыкальных спектаклях, солистка татарской кавер-группы. </p>
+                        <p class="teacher-fact f-s-16 f-s-14-sm white-100">«Преподаю вокал, фортепиано, сценическую речь»</p>
+                   </div>
+                </div>
+            </div>
+            <div class="float modal-block block bg-black-100 anastasia-block block-two-decorations">
+                <div class="block-content">
+                   <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Вокал</div>
+                   <div class="background-image float loop-line"></div>
+                    <div class="background-image float sheet-8"></div>
+                    <div class="background-image float sheet-16"></div>
+                   <div class="block-header">
+                       <div class="teacher-info">
+                           <span class="teacher-info-name f-s-48 f-s-20-sm white-100">Анастасия</span>
+                       </div>
+                       <div class="background-image teacher-avatar "></div>
+                   </div>
+                   <div class="block-body">
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Певица Республики Татарстан</p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Номинант музыкальных премий TMTV и «Милли» </p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Её песни и клипы вы можете слышать и видеть на всех теле и радио площадках нашей республики   </p>
+                       <p class="teacher-fact f-s-16 f-s-14-sm white-100">Готова поделиться большим опытом выступлений, раскрыть Вашу творческую натуру, харизму и уверенность.</p>
+                   </div>
+                </div>
+            </div>
+            <div class="float modal-block block bg-black-100 leyli-block block-two-decorations">
+                <div class="block-content">
+                   <div class="block float instrument-skill bg-yellow-100 black-100 f-s-16 f-s-14-sm">Вокал</div>
+                   <div class="background-image float loop-line"></div>
+                    <div class="background-image float sheet-8"></div>
+                    <div class="background-image float sheet-16"></div>
+                   <div class="block-header">
+                       <div class="teacher-info">
+                           <span class="teacher-info-name f-s-48 f-s-20-sm white-100">Лейли</span>
+                       </div>
+                       <div class="background-image teacher-avatar "></div>
+                   </div>
+                   <div class="block-body">
+                    <p class="teacher-fact f-s-16 f-s-14-sm white-100">Выпускница Консерватории и Педагогического института</p>
+                    <p class="teacher-fact f-s-16 f-s-14-sm white-100">Преподаватель первой квалификационной категории</p>
+                    <p class="teacher-fact f-s-16 f-s-14-sm white-100">Опыт преподавания более 10 лет, певица театра и государственного хора </p>
+                    <p class="teacher-fact f-s-16 f-s-14-sm white-100">Победительница и многочисленный лауреат всероссийских и международных конкурсов</p>
+                   </div>
+                </div>
+            </div>
+        </div>
+     </div>
+    <footer class="footer" id="footer">
         <div class="footer-content">
             <div class="social-map">
                 <div class="social-brand">
@@ -137,7 +893,7 @@
                 <h4 class="list-title">Контакты</h4>
                 <ul class="list footer-list">
                     <li class="footer-list-item">8 (909) 307-69-42</li>
-                    <li class="footer-list-item">8 (995) 509-69-42</li>
+                    <li class="footer-list-item">8 (995) 095-69-42</li>
                     <li class="footer-list-item">
                         Большая Красная улица, 8, 
                         Вахитовский район, Казань,
@@ -155,4 +911,5 @@
         </div>
     </footer>
 </body>
+
 </html>

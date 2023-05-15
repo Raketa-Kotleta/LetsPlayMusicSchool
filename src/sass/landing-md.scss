@@ -2,6 +2,7 @@
 @import './colors.scss';
 @import './fonts.scss';
 @import './delays.scss';
+@import './aos.scss';
 @font-face {
     font-family: "Montserrat";
     src: url("../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format('woff2 supports variations'),
@@ -65,6 +66,11 @@
     }
     .header{
         background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 20;
         .navbar{
             display: flex;
             height: dpxvw(88);
@@ -76,8 +82,8 @@
                 flex-grow: 1;
                 .navbar-brand{
                     img{
-                        height: dpxvw(38);
-                        width: dpxvw(132.43);
+                        height: dpxvw(105);
+                        width: dpxvw(105);
                     }
                     flex: 0 0 dpxvw(243 + 132.43)
                 }
@@ -189,13 +195,19 @@
     .section-content{
         display: flex;
         position: relative;
+        flex-grow: 1;
+        scroll-behavior: smooth;
     }
     .float{
         position: absolute;
     }
+    .background-image.float{
+        z-index: 5;
+    }
     .block{
         display: block;
-        position: relative;   
+        position: relative;  
+        z-index: 0; 
     }
     .block.float{
         z-index: 10;
@@ -205,9 +217,12 @@
     }
     .title{
         text-align: center;
+        // animation: fadeInDown;
+        // animation-duration: 1s;
     }
     .section-main{
         height: dpxvw(847);
+        margin-top: dpxvw(88);
         .section-content{
             display: flex;
             flex: 1;
@@ -405,6 +420,1560 @@
             }
         }
     }
+    .form{
+       .label{
+        position: relative;
+           &:has(.form-input:not(:valid):not(:focus)){
+                &::after{
+                    transition: 1s;
+                    padding: dpxvw(20) dpxvw(10);
+                    font-size: dpxvw(18);
+                    color: white;
+                    position: absolute;
+                    background-color: $red-100;
+                    top:dpxvw(76);
+                    right: 0;
+                    left: 0;
+                    height: dpxvw(18);
+                    z-index: 100;
+                    border-radius: 8px;
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                   
+                    top: dpxvw(67);
+                    left: dpxvw(18);
+                    z-index: 100;
+                    border: 0 solid transparent;
+                    border-right-width: dpxvw(10);
+                    border-left-width:  dpxvw(10);
+                    border-bottom:  dpxvw(10) solid $red-100;
+                }
+           }
+           &:has(.form-input:not(:valid):not(:focus)){
+            &::after{
+                content: "Неправильно введено имя";
+                top: dpxvw(60);
+            }
+            &::before{
+                top: dpxvw(51);
+            }
+           }
+           &:has(.form-input[type="tel"]:not(:valid):not(:focus)){
+                &::after{
+                    content: "Неправильно введен номер";
+                }
+           }
+           &:has(.form-input[type="email"]:not(:valid):not(:focus)){
+            &::after{
+                content: "Неправильно введен email";
+                
+            }
+           }
+       }
+        &-input{
+            position: relative;
+            padding: 
+            0
+            dpxvw(27);
+            height: dpxvw(63);
+            border-width: 1px;
+            border-style: solid;
+            outline: none;
+            color: $black-100;
+            &::placeholder{
+                color: $gray-300;
+                font-family: 'Montserrat';
+                font-weight: 500;
+                font-size: dpxvw(map-get($font-sizes, "f-s-18"));
+            }
+            &:hover{
+                border-color: $gray-500;
+                &::placeholder{
+                    color: $black-100;
+                }
+            }
+            &:focus{
+                &::placeholder{
+                    color: $black-100;
+                }
+            }
+        }
+    }
+    .submit-btn{
+        text-transform: uppercase;
+    }
+    .container{
+        display: flex;
+    }
+    .section-consultation{
+        .section-content{
+            padding: 
+            dpxvw(45)
+            0
+            dpxvw(32)
+            0;
+            justify-content: center;
+            
+        }
+        .circle-line{
+            background-image: url("../assets/images/form consultation/decorations/circle-line.png");
+            width: dpxvw(97);
+            height: dpxvw(33);
+            top: dpxvw(520);
+            left: dpxvw(560);
+            
+        }
+        .sheet-16{
+            background-image: url("../assets/images/form consultation/decorations/sheet-16.png");
+            width: dpxvw(40);
+            height: dpxvw(60);
+            top: dpxvw(162);
+            left: dpxvw(726);
+
+        }
+        .sheet-8{
+            background-image: url("../assets/images/form consultation/decorations/sheet-8.png");
+            width: dpxvw(45*1.1);
+            height: dpxvw(54*1.1);
+            top: dpxvw(248);
+            left: dpxvw(766);
+        }
+        .underline{
+            background-image: url("../assets/images/form consultation/decorations/underline.png");
+            width: dpxvw(556);
+            height: dpxvw(8);
+            top: dpxvw(173);
+            left: dpxvw(970);
+            z-index: 1;
+        }
+        .underline-bottom{
+            display: none;
+        }
+        #block-tg-link{
+            height: dpxvw(88);
+            width: dpxvw(212);
+            padding: 
+            dpxvw(12)
+            0
+            dpxvw(6)
+            dpxvw(15);
+            top: dpxvw(435);
+            left: dpxvw(310);
+            p{
+                font-family: $unbounded;
+                font-weight: 300;
+                line-height: 120%;
+                a{
+                    font-family: inherit;
+                    font-weight: inherit;
+                }
+            }
+        }
+        .section-content>.block{
+            
+            height: dpxvw(532);
+            width: dpxvw(1358);
+            .block-content{
+                display: flex;
+                .part-photo{
+                    .background-image{
+                        height: dpxvw(504);
+                        width: dpxvw(635);
+                        background-image: url("../assets/images/form consultation/md/girl and micro.png");
+                    }
+                }
+                .part-form{
+                    padding: 
+                    dpxvw(57)
+                    dpxvw(62)
+                    dpxvw(62)
+                    dpxvw(62);
+                    .form-title{
+                        position: relative;
+                        font-family: $unbounded;
+                        font-weight: 500;
+                        line-height: 120%;
+                        margin:
+                        0
+                        0
+                        dpxvw(11)
+                        0;
+                    }
+                    .form-text{
+                        position: relative;
+                        line-height: 145%;
+                        font-family: $montserrat;
+                        width: dpxvw(547);
+                        margin: 
+                        0
+                        0
+                        dpxvw(27)
+                        0;
+                    }
+                    .form{
+                       .label{
+                            .form-input#name{
+                                width: dpxvw(616-(30*2));
+                                margin: 
+                                0
+                                0
+                                dpxvw(22)
+                                0;
+                            }
+                       }
+                        .container{
+                            justify-content: space-between;
+                           .label{
+                            &:nth-child(1):has(.form-input:not(:valid):not(:focus)){
+                                &::after{
+                                    top: dpxvw(76);
+                                    
+                                }
+                                &::before{
+                                    top: dpxvw(67);
+                                }
+                            }
+                            &:nth-child(2):has(.form-input:not(:valid):not(:focus)){
+                                &::after{
+                                    top: dpxvw(76);
+                                   
+                                }
+                                &::before{
+                                    top: dpxvw(67);
+                                }
+                            }
+                                .form-input#tel, .form-input#email{
+                                    width: dpxvw(298-(30*2));
+                                }
+                           }
+                            margin: 
+                            0
+                            0
+                            dpxvw(30)
+                            0;
+                        }
+                        .form-submit.container{
+                            .form-text{
+                                margin: 
+                                dpxvw(10)
+                                0
+                                0
+                                0;
+                                width: dpxvw(304);
+                            }
+                            .submit-btn{
+                                width: dpxvw(293);
+                                height: dpxvw(66);
+                                transition-property: background-color;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+    .section-course{
+        .section-content{
+            flex-direction: column;
+            align-items: center;
+            padding: 
+            dpxvw(112)
+            0
+            dpxvw(114)
+            0;
+            .title{
+                font-family: $unbounded;
+                margin-bottom: dpxvw(64);
+            }
+            .block{
+                width: dpxvw(1358);
+                height: dpxvw(640);
+                .form-control{
+                    &-content{
+                        display: flex;
+                        flex-wrap: wrap;
+                        padding: dpxvw(1);
+                        .radio{
+                          display: none;  
+                        }
+                        #guitar:checked+.radio-label-guitar{
+                            background-color: $black-100;
+                            color: $white-100;
+                        }
+                        #vocale:checked+.radio-label-vocale{
+                            background-color: $black-100;
+                            color: $white-100;
+                        }
+                        #piano:checked+.radio-label-piano{
+                            background-color: $black-100;
+                            color: $white-100;
+                        }
+                        #ukulele:checked+.radio-label-ukulele{
+                            background-color: $black-100;
+                            color: $white-100;
+                        }
+                        .radio-label{
+                            background-color: $white-100;
+                            display: block;
+                            width: dpxvw(122);
+                            height: dpxvw(31);
+                            margin-right: dpxvw(2);
+                            text-align: center;
+                            padding-top: dpxvw(15);
+                        }
+                    }
+                }
+                .block-content.active{
+                    display: flex;
+                }
+                .content-course{
+                    .sheet-2{
+                        background-image: url("../assets/images/courses/decorations/sheet-2.svg");
+                        width: dpxvw(28*1.5);
+                        height: dpxvw(48*1.5);
+                    }
+                    .key{
+                        background-image: url("../assets/images/courses/decorations/key.svg");
+                        width: dpxvw(25*1.8);
+                        height: dpxvw(84*1.8);
+                    }
+                    .spray{
+                        background-image: url("../assets/images/courses/decorations/spray.svg");
+                        width: dpxvw(30);
+                        height: dpxvw(24);
+                    }
+                    .zig-zag{
+                        background-image: url("../assets/images/courses/decorations/zig-zag.svg");
+                        width: dpxvw(525);
+                        height: dpxvw(20);
+                    }
+                }
+                .block-content{
+                    padding: 
+                    dpxvw(54)
+                    dpxvw(87)
+                    0
+                    dpxvw(70);
+                    display: none;
+                    .block-header{
+                        display: flex;
+                        justify-content: center;
+                        .block-photo{
+                            width: dpxvw(424);
+                            height: dpxvw(486);
+                            
+                        }
+                    }
+                    .block-body{
+                        margin-left: dpxvw(172);
+                        .block-title{
+                            font-family: $unbounded;
+                            line-height: 100%;
+                            font-weight: 500;
+                            margin-bottom: dpxvw(14);
+                        }
+                        .block-text{
+                            font-family: $montserrat;
+                            line-height: 135%;
+                            min-height: dpxvw(340);
+                        }
+                        .submit-btn{
+                            width: dpxvw(293);
+                            height: dpxvw(66);
+                            transition-property: background-color;
+                            margin-top: dpxvw(18);
+                        }
+                    }
+                }
+                .content-course-guitar{ 
+                    .block-photo{
+                        background-image: url("../assets/images/courses/common/boy_guitar.png");
+                    }
+                    .sheet-2{
+                        top: dpxvw(545);
+                        left: dpxvw(1243);
+                    }
+                    .key{
+                        top: dpxvw(466);
+                        left: dpxvw(1206);
+                    }
+                    .spray{
+                        top: dpxvw(570);
+                        left: dpxvw(33);
+                    }
+                    .zig-zag{
+                        top: dpxvw(66);
+                        left: dpxvw(20);
+                    }
+                }
+                .content-course-vocale {
+                    .block-photo{
+                        background-image: url("../assets/images/courses/common/girl_sign.png");
+                    }
+                    .sheet-2{
+                        top: dpxvw(545);
+                        left: dpxvw(1249);
+                        transform: rotate(15.1deg);
+                    }
+                    .key{
+                        top: dpxvw(466);
+                        left: dpxvw(1206);
+                        transform: rotate(-15.1deg);
+                    }
+                    .spray{
+                        top: dpxvw(590);
+                        left: dpxvw(68);
+                    }
+                    .zig-zag{
+                        top: dpxvw(66);
+                        left: dpxvw(20);
+                    }
+                }
+                .content-course-piano {
+                    .block-photo{
+                        background-image: url("../assets/images/courses/common/boy_guitar_2.png");
+                    }
+                    .sheet-2{
+                        top: dpxvw(545);
+                        left: dpxvw(1243);
+                    }
+                    .key{
+                        top: dpxvw(466);
+                        left: dpxvw(1206);
+                    }
+                    .spray{
+                        top: dpxvw(560);
+                        left: dpxvw(39);
+                        transform: rotate(5.1deg);
+                    }
+                    .zig-zag{
+                        top: dpxvw(66);
+                        left: dpxvw(20);
+                    }
+                }
+                .content-course-ukulele {
+                    .block-photo{
+                        background-image: url("../assets/images/courses/common/girl_guitar.png");
+                    }
+                    .sheet-2{
+                        top: dpxvw(545);
+                        left: dpxvw(1249);
+                        transform: rotate(15.1deg);
+                    }
+                    .key{
+                        top: dpxvw(466);
+                        left: dpxvw(1206);
+                        transform: rotate(-15.1deg);
+                    }
+                    .spray{
+                        top: dpxvw(590);
+                        left: dpxvw(68);
+                    }
+                    .zig-zag{
+                        top: dpxvw(66);
+                        left: dpxvw(20);
+                    }
+                }
+            }
+        }
+    }
+    .section-teachers{
+        display: block;
+        .section-content{
+            display: block;
+            padding: 
+            dpxvw(63)
+            0
+            dpxvw(146)
+            0;
+            .title{
+                font-family: $unbounded;
+                margin-bottom: dpxvw(64);
+            }
+            .slider-content{
+                .teacher-block{
+                    position: relative;
+                    width: dpxvw(654) !important;
+                    height: dpxvw(392);
+                    margin: 
+                    0
+                    dpxvw(12)
+                    0
+                    dpxvw(12);
+                    padding: 
+                    dpxvw(20)
+                    0
+                    0
+                    dpxvw(45);
+                    .instrument-skill{
+                        line-height: 145%;
+                        padding: 
+                        dpxvw(2)
+                        dpxvw(2)
+                        dpxvw(2)
+                        dpxvw(2);
+                    }
+                    .block-header{
+                        display: flex;
+                        margin: 
+                        0
+                        0
+                        dpxvw(30)
+                        0;
+                        .teacher-avatar{
+                            width: dpxvw(327);
+                            height: dpxvw(215);
+                            margin: 
+                            0
+                            0
+                            0
+                            dpxvw(50);
+                        }
+                        .teacher-info{
+                            &-name{
+                                font-family: $unbounded;
+                            }
+                            margin-top: dpxvw(32);
+                        }
+                       
+                    }
+                    .block-body{
+                        .teacher-fact{
+                            line-height: 1.75;
+                            // margin-bottom: dpxvw(7);
+                        }
+                        .teacher-fact::before{
+                            content: "— ";
+                        }
+                    }
+                    .block-footer{
+                        padding: dpxvw(10) 0;
+                        .read-more{
+                            background-color: transparent;
+                            border: none;
+                            text-decoration: underline;
+                            cursor: pointer;
+                            line-height: 145%;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+                .daniyar-block .teacher-avatar{
+                    background-image: url("../assets/images/teachers/common/avatars/daniyar.png");
+                }
+                .insaf-block .teacher-avatar{
+                    background-image: url("../assets/images/teachers/common/avatars/insaf.png");
+                }
+                .elmira-block .teacher-avatar{
+                    background-image: url("../assets/images/teachers/common/avatars/elmira.png");
+                }
+                .bulat-block .teacher-avatar{
+                    background-image: url("../assets/images/teachers/common/avatars/bulat.png");
+                }
+                .elvina-block .teacher-avatar{
+                    background-image: url("../assets/images/teachers/common/avatars/elvina.png");
+                }
+                .anastasia-block .teacher-avatar{
+                    background-image: url("../assets/images/teachers/common/avatars/anastasia.png");
+                    margin: 0 0 0 dpxvw(0) !important; 
+                }
+
+                .leyli-block .teacher-avatar{
+                    background-image: url("../assets/images/teachers/common/avatars/leyli.png");
+                    
+                }
+                .daniyar-block .instrument-skill{
+                    transform: rotate(-5deg);
+                    top: dpxvw(115)
+                }
+                .bulat-block, .daniyar-block, .elmira-block, .insaf-block {
+                    .instrument-skill{
+                        font-family: $montserrat;
+                    }
+                }
+                .bulat-block{
+                    .instrument-skill{
+                        transform: rotate(-5deg);
+                        top: dpxvw(115)
+
+                    }
+                }
+                .insaf-block{
+                    .instrument-skill:nth-child(1){
+                        transform: rotate(-5deg);
+                        top: dpxvw(115)
+                    }
+                    .instrument-skill:nth-child(2){
+                        transform: rotate(5deg);
+                        top: dpxvw(155);
+                        left: dpxvw(65);
+                    }
+                }
+                .elmira-block{
+                    .instrument-skill:nth-child(1){
+                        transform: rotate(-5deg);
+                        top: dpxvw(115)
+                    }
+                    .instrument-skill:nth-child(2){
+                        transform: rotate(5deg);
+                        top: dpxvw(155);
+                        left: dpxvw(65);
+                    }
+                }
+                .elvina-block{
+                    .instrument-skill:nth-child(1){
+                        transform: rotate(-5deg);
+                        top: dpxvw(115)
+                    }
+                }
+                .anastasia-block{
+                    .instrument-skill:nth-child(1){
+                        transform: rotate(-5deg);
+                        top: dpxvw(115)
+                    }
+                }
+                .leyli-block{
+                    .instrument-skill:nth-child(1){
+                        transform: rotate(-5deg);
+                        top: dpxvw(115)
+                    }
+                }
+                .daniyar-block, .block-two-decorations{
+                    .loop-line{
+                        background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                        width: dpxvw(129);
+                        height: dpxvw(54);
+                        top: dpxvw(117);
+                        left: dpxvw(138);
+                    }
+                    .sheet-8{
+                        background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                        width: dpxvw(36*1.1);
+                        height: dpxvw(43*1.1);
+                        top: dpxvw(175);
+                        left: dpxvw(179);
+                    }
+                }
+                .insaf-block{
+                    .loop-line{
+                        background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                        width: dpxvw(129);
+                        height: dpxvw(54);
+                        top: dpxvw(117);
+                        left: dpxvw(138);
+                    }
+                    .sheet-8{
+                        background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                        width: dpxvw(36*1.1);
+                        height: dpxvw(43*1.1);
+                        top: dpxvw(175);
+                        left: dpxvw(179);
+                    }
+                }
+                .elmira-block{
+                    .loop-line{
+                        background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                        width: dpxvw(129);
+                        height: dpxvw(54);
+                        top: dpxvw(117);
+                        left: dpxvw(138);
+                    }
+                    .sheet-8{
+                        background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                        width: dpxvw(36*1.1);
+                        height: dpxvw(43*1.1);
+                        top: dpxvw(175);
+                        left: dpxvw(179);
+                        transform: rotate(24deg);
+                    }
+                }
+                .bulat-block .block-three-decorations{
+                    .loop-line{
+                        background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                        width: dpxvw(129);
+                        height: dpxvw(54);
+                        top: dpxvw(117);
+                        left: dpxvw(138);
+                    }
+                    .sheet-8{
+                        background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                        width: dpxvw(36*1.1);
+                        height: dpxvw(43*1.1);
+                        top: dpxvw(188);
+                        left: dpxvw(187);
+                        transform: rotate(-6deg);
+                    }
+                    .sheet-16{
+                        background-image: url("../assets/images/teachers/decorations/sheet-16.svg");
+                        width: dpxvw(30*1.1);
+                        height: dpxvw(48*1.1);
+                        top: dpxvw(157);
+                        left: dpxvw(147);
+                    }
+                }
+            }
+            .loop-line-2{
+                background-image: url("../assets/images/teachers/decorations/loop_line_2.svg");
+                width: dpxvw(320*1.5);
+                height: dpxvw(61*1.5);
+                top: dpxvw(617);
+                left: dpxvw(38);
+            }
+        }
+    }
+    .section-methodway{
+        .section-content{
+            flex-direction: column;
+            padding: 
+            dpxvw(58)
+            dpxvw(245)
+            dpxvw(111)
+            dpxvw(245);
+            .title{
+                font-family: $unbounded;
+                margin-bottom: dpxvw(68);
+            }
+            .container{
+                .block{
+                    display: flex;
+                    margin: 0 dpxvw(8);
+                }
+                .block-header-photo{
+                    margin-bottom: dpxvw(32);
+                }
+                
+                .block-title{
+                    font-family: $unbounded;
+                    margin-bottom: dpxvw(12);
+                    line-height: 110%;
+                }
+                .block-text{
+                    line-height: 145%;
+                    font-family: $montserrat;
+                }
+                .block-consult{
+                    flex-direction: column;
+                    width: dpxvw(292);
+                    height: dpxvw(627-21);
+                    padding: 
+                    dpxvw(21)
+                    dpxvw(19)
+                    0
+                    dpxvw(19);
+                    margin-left: 0;
+                    .block-header{
+                        .block-header-photo{
+                            background-image: url("../assets/images/methodway/common/disk.png");
+                            width: dpxvw(286);
+                            height:  dpxvw(311);
+                        }
+                    }
+                }
+                .container{
+                    flex-wrap: wrap;
+                    .block-lesson{
+                        width: dpxvw(556-39);
+                        height: dpxvw(300-21);
+                        padding: 
+                        dpxvw(21)
+                        dpxvw(26)
+                        dpxvw(0) 
+                        dpxvw(39);
+                        .block-header{
+                            order: 2;
+                            &-photo{
+                                background-image: url("../assets/images/methodway/common/boys_guitars.png");
+                                width: dpxvw(270);
+                                height:  dpxvw(249);
+                            }
+                        }
+                        .block-body{
+                            .block-title{
+                                margin: 
+                                dpxvw(16)
+                                0
+                                dpxvw(16)
+                                0;
+                            }
+                            .block-text{
+                                padding-right: dpxvw(10);
+                            }
+                        }
+                    }
+                    .block-lesson-format{
+                        width: dpxvw(398-14-18);
+                        height:  dpxvw(300-21);
+                        padding: 
+                        dpxvw(21)
+                        dpxvw(14)
+                        dpxvw(0)
+                        dpxvw(31);
+                        .block-title{
+                            margin-top: dpxvw(10);
+                        }
+                    }
+                    .block-skills{
+                        align-self: flex-end;
+                        width: dpxvw(330-21-28);
+                        height:  dpxvw(312-21);
+                        padding: 
+                        dpxvw(21)
+                        dpxvw(21)
+                        dpxvw(0)
+                        dpxvw(28);
+                        .block-title{
+                            margin-top: dpxvw(30);
+                        }
+                    }
+                    .block-concert{
+                        align-self: flex-end;
+                        width: dpxvw(664-23-21);
+                        height:  dpxvw(312-25);
+                        padding: 
+                        dpxvw(25)
+                        dpxvw(21)
+                        dpxvw(0)
+                        dpxvw(23);
+                        margin-right: 0;
+                        .block-header{
+                            &-photo{
+                                background-image: url("../assets/images/methodway/common/girl_micro.png");
+                                width: dpxvw(230);
+                                height:  dpxvw(251);
+                            }
+                        }
+                        .block-body{
+                            margin-left: dpxvw(30);
+                            margin-top: dpxvw(22);
+                        }
+                    }
+                }
+            }
+            .circle-line-rd{
+                background-image: url("../assets/images/methodway/decorations/circle_line_rd.svg");
+                width: dpxvw(71);
+                height:  dpxvw(27);
+                top: dpxvw(148);
+                left: dpxvw(1144);
+            }
+            .circle-line-ru{
+                background-image: url("../assets/images/methodway/decorations/circle_line_ru.svg");
+                width: dpxvw(60);
+                height:  dpxvw(72);
+                top: dpxvw(495);
+                left: dpxvw(549);
+            }
+            .circle-line-ru2{
+                background-image: url("../assets/images/methodway/decorations/circle_line_ru2.svg");
+                width: dpxvw(121);
+                height:  dpxvw(25);
+                top: dpxvw(823);
+                left: dpxvw(915-50);
+            }
+            .circle-line-ld{
+                background-image: url("../assets/images/methodway/decorations/circle_line_ld.svg");
+                width: dpxvw(128*1.2);
+                height:  dpxvw(78*1.2);
+                top: dpxvw(65);
+                left: dpxvw(504);
+            }
+            .curve{
+                background-image: url("../assets/images/methodway/decorations/curve_line.svg");
+                width: dpxvw(381);
+                height:  dpxvw(80);
+                top: dpxvw(469);
+                left: dpxvw(857);
+            }
+            .sheet-8{
+                background-image: url("../assets/images/methodway/decorations/sheet_8.svg");
+                width: dpxvw(45);
+                height:  dpxvw(54);
+                top: dpxvw(750);
+                left: dpxvw(777);
+            }
+            .sheet-2{
+                background-image: url("../assets/images/methodway/decorations/sheet-2.svg");
+                width: dpxvw(27);
+                height:  dpxvw(47);
+                top: dpxvw(712);
+                left: dpxvw(848);
+            }
+            .spray-down{
+                background-image: url("../assets/images/methodway/decorations/spray_down.svg");
+                width: dpxvw(28);
+                height:  dpxvw(23);
+                top: dpxvw(815);
+                left: dpxvw(200);
+            }
+            .spray-up{
+                background-image: url("../assets/images/methodway/decorations/spray_up.svg");
+                width: dpxvw(23);
+                height:  dpxvw(20);
+                top: dpxvw(517);
+                left: dpxvw(1188);
+            }
+            .star{
+                background-image: url("../assets/images/methodway/decorations/star.svg");
+                width: dpxvw(12);
+                height:  dpxvw(15);
+                top: dpxvw(428);
+                left: dpxvw(819);
+            }
+            .underline{
+                background-image: url("../assets/images/methodway/decorations/underline.svg");
+                width: dpxvw(369*1.2);
+                height:  dpxvw(15*1.2);
+                top: dpxvw(117);
+                left: dpxvw(824);
+            }
+        }
+    }
+    .section-whywe{
+        .section-content>.title{
+            margin: 
+            0
+            0
+            dpxvw(64)
+            0;
+            font-family: $unbounded;
+           
+        }
+        .section-content{
+            flex-wrap: wrap;
+           
+            padding: 
+            dpxvw(72)
+            dpxvw(247)
+            dpxvw(168)
+            dpxvw(247);
+            .container{
+                flex-wrap: wrap;
+                .block:nth-child(-n+3){
+                    width: dpxvw(442-27-36);
+                    height: dpxvw(275-28-38);
+                    padding: 
+                    dpxvw(27)
+                    dpxvw(28)
+                    dpxvw(36)
+                    dpxvw(38);
+                }
+                .block:nth-last-child(-n+4){
+                    width: dpxvw(442-36-26);
+                    height: dpxvw(226-35-31);
+                    padding: 
+                    dpxvw(25)
+                    dpxvw(35)
+                    dpxvw(36)
+                    dpxvw(31);
+                }
+                .block:nth-last-child(1){
+                    width: dpxvw(442-34-46);
+                    height: dpxvw(181-52-31);
+                    padding: 
+                    dpxvw(34)
+                    dpxvw(52)
+                    dpxvw(46)
+                    dpxvw(31);
+                }
+                
+                .block{
+                    width: dpxvw(434);
+                    height: dpxvw(275);
+                    margin: 
+                    0
+                    dpxvw(8)
+                    dpxvw(16)
+                    0;
+                    .title{
+                        text-align: left;
+                        font-family: $unbounded;
+                        margin-bottom: dpxvw(12);
+                    }
+                    .text{
+                        line-height: 130%;
+                    }
+                }
+            }
+            .guitar{
+                background-image: url("../assets/images/whywe/decorations/guitar.svg");
+                width: dpxvw(856);
+                height:  dpxvw(456);
+                top: dpxvw(633);
+                left: dpxvw(758-30);
+            }
+            .loop{
+                background-image: url("../assets/images/whywe/decorations/loop.svg");
+                width: dpxvw(61);
+                height:  dpxvw(26);
+                top: dpxvw(443-20);
+                left: dpxvw(1553-40);
+            }
+            .loop-line{
+                background-image: url("../assets/images/whywe/decorations/loop_line.svg");
+                width: dpxvw(59*1.5);
+                height:  dpxvw(64*1.5);
+                top: dpxvw(758-35);
+                left: dpxvw(614-70);
+            }
+            .spray{
+                background-image: url("../assets/images/whywe/decorations/spray.svg");
+                width: dpxvw(33);
+                height:  dpxvw(16);
+                top: dpxvw(544-40);
+                left: dpxvw(613-40);
+            }
+            .hearts{
+                background-image: url("../assets/images/whywe/decorations/hearts.svg");
+                width: dpxvw(34*2.2);
+                height:  dpxvw(17*2.2);
+                top: dpxvw(405);
+                left: dpxvw(1071);
+            }
+            .micro{
+                background-image: url("../assets/images/whywe/decorations/micro.svg");
+                width: dpxvw(100*1.1);
+                height:  dpxvw(200*1.1);
+                top: dpxvw(210);
+                left: dpxvw(570);
+            }
+        }
+    }
+    .section-reviews{
+        display: block;
+        .section-content{
+            display: block;
+            padding: 
+            dpxvw(90)
+            0
+            dpxvw(70)
+            0;
+            .title{
+                font-family: $unbounded;
+                font-weight: 400;
+                margin-bottom: dpxvw(73);
+            }
+            .slider-content{
+                display: block;
+          
+            .review-block{
+                
+                position: relative;
+                height: dpxvw(342);
+                width: dpxvw(414) !important;
+                margin:
+                0
+                dpxvw(12)
+                0
+                0;
+                padding: 
+                dpxvw(24)
+                dpxvw(28)
+                dpxvw(14)
+                dpxvw(24);
+                .block-header{
+                    display: flex;
+                    align-items: center;
+                    .person-avatar{
+                        height: dpxvw(48);
+                        width: dpxvw(48);
+                    }
+                    .person-info{
+                        display: flex;
+                        flex-direction: column;
+                        padding: 
+                        0
+                        0
+                        0
+                        dpxvw(14);
+                        &-name{
+                            line-height: 145%;
+                            font-family: $montserrat;
+                            font-weight: 500;
+                        }
+                        &-instrument{
+                            line-height: 135%;
+                        }
+                    }
+                    margin: 
+                    0
+                    0
+                    dpxvw(15)
+                    0;
+                }
+                  &-body{
+                     max-height: dpxvw(278);
+                     overflow: hidden;
+                     text-overflow: ellipsis;
+                    .text{
+                        
+                        line-height: 145%;
+                        font-weight: 400;
+                        font-family: $montserrat;
+                    }
+                  }
+            }
+            .elena-block{
+                .sheet-2{
+                    background-image: url("../assets/images/reviews/decorations/sheet-2.svg");
+                    width: dpxvw(27);
+                    height:  dpxvw(47);
+                    top: dpxvw(260);
+                    left: dpxvw(370);
+                }
+            }
+            .lidia-block{
+                .sheet-2{
+                    background-image: url("../assets/images/reviews/decorations/sheet-2.svg");
+                    width: dpxvw(27);
+                    height:  dpxvw(47);
+                    top: dpxvw(260);
+                    left: dpxvw(370);
+                }
+            }
+            .ramilya-block{
+                .sheet-8{
+                    background-image: url("../assets/images/reviews/decorations/sheet-8.svg");
+                    width: dpxvw(47*1.2);
+                    height:  dpxvw(47*1.2);
+                    top: dpxvw(280);
+                    left: dpxvw(370);
+                }
+            }
+            .elena-avatar{
+                background-image: url("../assets/images/reviews/common/elena.png");
+            }
+            .alex-avatar{
+                background-image: url("../assets/images/reviews/common/alex.png");
+            }
+            .dima-avatar{
+                background-image: url("../assets/images/reviews/common/dima.png");
+            }
+            .ramilya-avatar{
+                background-image: url("../assets/images/reviews/common/ramilya.png");
+            }
+            .lidia-avatar{
+                background-image: url("../assets/images/reviews/common/lidia.png");
+            }
+          }
+        }
+    }
+    .section-choice{
+        .section-content{
+            padding: 
+            dpxvw(98)
+            0
+            dpxvw(101)
+            0;
+            justify-content: center;
+            .loop-line{
+                background-image: url("../assets/images/choice/decorations/loop-line.png");
+                width: dpxvw(274);
+                height: dpxvw(80);
+                top: dpxvw(450+50);
+                left: dpxvw(850);
+                
+            }
+            .sheet-8{
+                background-image: url("../assets/images/choice/decorations/sheet-8.png");
+                width: dpxvw(47);
+                height: dpxvw(60);
+                top: dpxvw(65+50);
+                left: dpxvw(1000);
+    
+            }
+            .sheet-4{
+                background-image: url("../assets/images/choice/decorations/sheet-4.png");
+                width: dpxvw(45*1.1);
+                height: dpxvw(54*1.1);
+                top: dpxvw(115+50);
+                left: dpxvw(1020);
+            }
+            .underline{
+                background-image: url("../assets/images/choice/decorations/underline.png");
+                width: dpxvw(309);
+                height: dpxvw(8);
+                top: dpxvw(123+50);
+                left: dpxvw(500);
+                z-index: 1;
+            }   
+        }
+        #block-tg-link{
+            height: dpxvw(88);
+            width: dpxvw(212);
+            padding: 
+            dpxvw(12)
+            0
+            dpxvw(6)
+            dpxvw(15);
+            top: dpxvw(435);
+            left: dpxvw(310);
+            p{
+                font-family: $unbounded;
+                font-weight: 300;
+                line-height: 120%;
+                a{
+                    font-family: inherit;
+                    font-weight: inherit;
+                }
+            }
+        }
+        .section-content>.block{
+            height: dpxvw(532);
+            width: dpxvw(1358);
+            .block-content{
+                display: flex;
+                .part-photo{
+                    order: 2;
+                    flex: 1;
+                    .background-image{
+                        margin-left: auto;
+                        height: dpxvw(504*1.025);
+                        width: dpxvw(605*1.025);
+                        background-image: url("../assets/images/choice/md/boy and guitar.png");
+                    }
+                }
+                .part-form{
+                    order: 1;
+                    padding: 
+                    dpxvw(45)
+                    dpxvw(55)
+                    dpxvw(62)
+                    dpxvw(55);
+                    .form-title{
+                        font-family: $unbounded;
+                        font-weight: 500;
+                        line-height: 120%;
+                        margin:
+                        0
+                        0
+                        dpxvw(8)
+                        0;
+                    }
+                    .form-text{
+                        line-height: 145%;
+                        font-family: $montserrat;
+                        width: dpxvw(547);
+                        margin: 
+                        0
+                        0
+                        dpxvw(23)
+                        0;
+                    }
+                    .form{
+                        .label{
+                            .form-input#name2{
+                                width: dpxvw(616-(30*2));
+                                margin: 
+                                0
+                                0
+                                dpxvw(22)
+                                0;
+                            }
+                        }
+                        .container{
+                            justify-content: space-between;
+                            .form-input#tel2, .form-input#email2{
+                                width: dpxvw(298-(30*2));
+                            }
+                            margin: 
+                            0
+                            0
+                            dpxvw(30)
+                            0;
+                        }
+                        .form-submit.container{
+                            margin: 
+                            0
+                            0
+                            dpxvw(10)
+                            0;
+                            .form-text{
+                                margin: 
+                                dpxvw(10)
+                                0
+                                0
+                                0;
+                                width: dpxvw(304);
+                            }
+                            .submit-btn{
+                                width: dpxvw(293);
+                                height: dpxvw(66);
+                                transition-property: background-color;
+                            }
+                        }
+                        
+                    }
+                    .social-links{
+                        margin: 
+                        dpxvw(12)
+                        0
+                        0
+                        0;
+                        .social-link{
+                            display: inline-block;
+                            width: dpxvw(42);
+                            height: dpxvw(42);
+                            margin: 
+                                0
+                                dpxvw(5)
+                                0
+                                0;
+                            &:nth-child(1){
+                                background-image: url("../assets/images/common/social-links/tg.svg");
+                            }
+                            &:nth-child(2){
+                                background-image: url("../assets/images/common/social-links/wa.svg");
+                            }
+                        }
+                    }
+                    h2.form-text{
+                        margin: 
+                        0
+                        0
+                        0
+                        0;
+                        font-weight: 500;
+                    }
+                    h3.form-text{
+                        margin: 
+                        0
+                        0
+                        0
+                        0;
+                    }
+                }
+            }
+        }
+    }
+    .section-modal.active{
+        display: flex;
+    }
+    .section-modal{
+        position: fixed;
+        z-index: 20;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba(23,23,23, .5);
+        display: none;
+        .section-content{
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            .block.active{
+                display: flex;
+            }
+            .block{
+                display: none;
+                position: absolute;
+                .close-btn{
+                    position: absolute;
+                    width: dpxvw(14);
+                    height: dpxvw(14);
+                    right: dpxvw(24);
+                    top: dpxvw(24);
+                    background-image: url("../assets/images/common/close_btn.svg");
+                }
+                .block-content{
+                    padding: 
+                    dpxvw(15)
+                    dpxvw(25)
+                    dpxvw(31)
+                    dpxvw(46);
+                  
+                    .instrument-skill{
+                        line-height: 145%;
+                        padding: 
+                        dpxvw(2)
+                        dpxvw(2)
+                        dpxvw(2)
+                        dpxvw(2);
+                        display: block;
+                    }
+                    .block-header{
+                        display: flex;
+                        margin: 
+                        0
+                        0
+                        dpxvw(30)
+                        0;
+                        .teacher-avatar{
+                            width: dpxvw(327);
+                            height: dpxvw(215);
+                            margin: 
+                            0
+                            0
+                            0
+                            dpxvw(50);
+                        }
+                        .teacher-info{
+                            &-name{
+                                font-family: $unbounded;
+                            }
+                            margin-top: dpxvw(32);
+                        }
+                       
+                }
+                
+                }
+               
+                .block-body{
+                    width: dpxvw(619);
+                    .teacher-fact{
+                        line-height: 1.75;
+                        // margin-bottom: dpxvw(7);
+                    }
+                    .teacher-fact::before{
+                        content: "— ";
+                    }
+                }
+            }
+            .daniyar-block .teacher-avatar{
+                background-image: url("../assets/images/teachers/common/avatars/daniyar.png");
+            }
+            .insaf-block .teacher-avatar{
+                background-image: url("../assets/images/teachers/common/avatars/insaf.png");
+            }
+            .elmira-block .teacher-avatar{
+                background-image: url("../assets/images/teachers/common/avatars/elmira.png");
+            }
+            .bulat-block .teacher-avatar{
+                background-image: url("../assets/images/teachers/common/avatars/bulat.png");
+            }
+            .elvina-block .teacher-avatar{
+                background-image: url("../assets/images/teachers/common/avatars/elvina.png");
+            }
+            .anastasia-block .teacher-avatar{
+                background-image: url("../assets/images/teachers/common/avatars/anastasia.png");
+            }
+            .leyli-block .teacher-avatar{
+                background-image: url("../assets/images/teachers/common/avatars/leyli.png");
+            }
+            .bulat-block, .daniyar-block, .elmira-block, .insaf-block, .elvina-block {
+                .instrument-skill{
+                    font-family: $montserrat;
+                }
+            }
+            .daniyar-block .instrument-skill{
+                transform: rotate(-5deg);
+                top: dpxvw(110)
+            }
+            
+            .bulat-block{
+                .instrument-skill{
+                    transform: rotate(-5deg);
+                    top: dpxvw(110)
+                }
+            }
+            .elvina-block, .anastasia-block, .leyli-block{
+                .instrument-skill{
+                    transform: rotate(-5deg);
+                    top: dpxvw(110)
+
+                }
+            }
+            .insaf-block{
+                .instrument-skill:nth-child(1){
+                    transform: rotate(-5deg);
+                    top: dpxvw(110)
+                }
+                .instrument-skill:nth-child(2){
+                    transform: rotate(5deg);
+                    top: dpxvw(150);
+                    left: dpxvw(65);
+                }
+            }
+            .elmira-block{
+                .instrument-skill:nth-child(1){
+                    transform: rotate(-5deg);
+                    top: dpxvw(110)
+                }
+                .instrument-skill:nth-child(2){
+                    transform: rotate(5deg);
+                    top: dpxvw(150);
+                    left: dpxvw(65);
+                }
+            }
+            .daniyar-block, .block-two-decorations{
+                .loop-line{
+                    background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                    width: dpxvw(129);
+                    height: dpxvw(54);
+                    top: dpxvw(117);
+                    left: dpxvw(138);
+                }
+                .sheet-8{
+                    background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                    width: dpxvw(36*1.1);
+                    height: dpxvw(43*1.1);
+                    top: dpxvw(175);
+                    left: dpxvw(179);
+                }
+            }
+            .insaf-block{
+                .loop-line{
+                    background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                    width: dpxvw(129);
+                    height: dpxvw(54);
+                    top: dpxvw(117);
+                    left: dpxvw(138);
+                }
+                .sheet-8{
+                    background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                    width: dpxvw(36*1.1);
+                    height: dpxvw(43*1.1);
+                    top: dpxvw(175);
+                    left: dpxvw(179);
+                }
+            }
+            .elmira-block{
+                .loop-line{
+                    background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                    width: dpxvw(129);
+                    height: dpxvw(54);
+                    top: dpxvw(117);
+                    left: dpxvw(138);
+                }
+                .sheet-8{
+                    background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                    width: dpxvw(36*1.1);
+                    height: dpxvw(43*1.1);
+                    top: dpxvw(175);
+                    left: dpxvw(179);
+                    transform: rotate(24deg);
+                }
+            }
+            .bulat-block{
+                .loop-line{
+                    background-image: url("../assets/images/teachers/decorations/loop_line.svg");
+                    width: dpxvw(129);
+                    height: dpxvw(54);
+                    top: dpxvw(117);
+                    left: dpxvw(128);
+                }
+                .sheet-8{
+                    background-image: url("../assets/images/teachers/decorations/sheet-8.svg");
+                    width: dpxvw(36*1.1);
+                    height: dpxvw(43*1.1);
+                    top: dpxvw(188);
+                    left: dpxvw(177);
+                    transform: rotate(-6deg);
+                }
+                .sheet-16{
+                    background-image: url("../assets/images/teachers/decorations/sheet-16.svg");
+                    width: dpxvw(30*1.1);
+                    height: dpxvw(48*1.1);
+                    top: dpxvw(157);
+                    left: dpxvw(137);
+                }
+            }
+        }
+    }
     .footer{
         display: flex;
         height: dpxvw(321);
@@ -441,13 +2010,13 @@
                             0
                             0;
                         &:nth-child(1){
-                            background-image: url("../assets/images/footer/social-links/tg.svg");
+                            background-image: url("../assets/images/common/social-links/tg.svg");
                         }
                         &:nth-child(2){
-                            background-image: url("../assets/images/footer/social-links/wa.svg");
+                            background-image: url("../assets/images/common/social-links/wa.svg");
                         }
                         &:nth-child(3){
-                            background-image: url("../assets/images/footer/social-links/yt.svg");
+                            background-image: url("../assets/images/common/social-links/yt.svg");
                         }
                     }
                 }

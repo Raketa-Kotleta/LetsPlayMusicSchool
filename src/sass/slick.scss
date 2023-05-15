@@ -1,0 +1,54 @@
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "../sass/functions.scss";
+$slick-slide__width: auto;
+.slick-slide{
+    width: $slick-slide__width;
+}
+.slick-arrow{
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    font-size: 0;
+    background-color: transparent;
+    border: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.slick-next{
+    left: 50.5%;
+    background-image: url("../assets/images/reviews/common/arrows/Arrow 2.svg");
+}
+.slick-prev{
+   left: 43.5%;
+   background-image: url("../assets/images/reviews/common/arrows/Arrow 3.svg");
+}
+@media screen and (min-width: 525px) {
+    .section-teachers{
+        .slider-content{
+            height: dpxvw(472);
+        }
+    }
+    .slider-content{
+        height: dpxvw(422);
+    }
+    .slick-arrow{
+        width: dpxvw(102);
+        height: dpxvw(30);
+    }
+}
+@media screen and (max-width: 525px){
+    .slider-content{
+        height: auto;
+    }
+    .slick-arrow{
+        top: mpxvw(400);
+        width: mpxvw(102*0.6);
+        height: mpxvw(30*0.6);
+    }
+    .slick-prev{
+        left: 30%;
+    }
+    .slick-next{
+        left: 55%;
+    }
+}

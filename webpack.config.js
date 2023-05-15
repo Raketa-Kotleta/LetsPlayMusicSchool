@@ -19,6 +19,12 @@ module.exports = {
                 MiniCssExtractPlugin.loader,
                 // Translates CSS into CommonJS
                 "css-loader",
+                {
+                    loader: 'url-tilde-loader',
+                    options: {
+                      replacement: process.env.NODE_ENV === 'production' ? '/node_modules/' : ''
+                    }
+                },
                 // Compiles Sass to CSS
                 "sass-loader",
               ],
@@ -27,20 +33,20 @@ module.exports = {
             test: /\.(png|svg|jpg|jpeg|gif)$/i,
             type: 'asset/resource',
             },
-            // {
-            //   test: /\.(png|jpe?g|gif)$/i,
-            //   use: [
-            //     {
-            //       loader: 'image-webpack-loader',
-            //       options: {
-            //         pngquant: {
-            //           quality: [0.55, 0.90],
-            //           speed: 1
-            //         },
-            //       }
-            //     },
-            //   ],
-            // },
+            {
+              test: /\.(png|jpe?g|gif)$/i,
+              use: [
+                {
+                  loader: 'image-webpack-loader',
+                  options: {
+                    pngquant: {
+                      quality: [0.55, 0.90],
+                      speed: 1
+                    },
+                  }
+                },
+              ],
+            },
            {
             test: /\.(html)$/,
             use: ['html-loader']
