@@ -366,7 +366,7 @@
             }
            
             .girl-guitar.background-image{
-                background-image: url("../assets/images/main/md/people/girl-guitar.png");
+                background-image: url("../assets/images/main/md/people/lesson1.png");
             }
             .title{
                 font-family: $unbounded !important;
@@ -413,7 +413,7 @@
                 background-position-x: 100%;
             }
             .boy-guitar.background-image{
-                background-image: url("../assets/images/main/md/people/boy-guitar.png");
+                background-image: url("../assets/images/main/md/people/lesson2.png");
             }
             .part-instrumental-info{
                 display: flex;
@@ -864,7 +864,7 @@
                 }
                 .content-course-piano {
                     .block-photo{
-                        background-image: url("../assets/images/courses/common/boy_guitar_2.png");
+                        background-image: url("../assets/images/courses/common/girl_piano.png");
                     }
                     .sheet-2{
                         top: mpxvw(380);
@@ -2047,6 +2047,47 @@
                     top: mpxvw(115);
                     left: mpxvw(24);
                     transform: rotate(30deg);
+                }
+            }
+            .block-response{
+                width: mpxvw(330);
+                height: mpxvw(306);
+                position: relative;
+                .block-content{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0;
+                    flex-grow: 1;
+                    .micro{
+                        background-image: url("../assets/images/whywe/decorations/micro.svg");
+                        width: mpxvw(60);
+                        height: mpxvw(126);
+                        top: mpxvw(25);
+                        left: mpxvw(20);
+                        transform: scale(-1,1) rotate(-10deg);
+                    }
+                    .hearts{
+                        background-image: url("../assets/images/whywe/decorations/hearts.svg");
+                        width: mpxvw(97*0.4);
+                        height: mpxvw(97*0.4);
+                        top: mpxvw(150);
+                        left: mpxvw(260);
+                    }
+                    .response-info{
+                        width: mpxvw(275);
+                        
+                        text-align: center;
+                        &-text{
+                            font-family: $unbounded;
+                            font-weight: 500;
+                            line-height: 140%;
+                        }
+                    }
+                    
+                }
+                .close-btn{
+                    background-image: url("../assets/images/common/cross.svg") !important;
                 }
             }
         }

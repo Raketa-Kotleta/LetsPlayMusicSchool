@@ -272,22 +272,22 @@
                 width: dpxvw(27);
                 height: dpxvw(46);
                 top: dpxvw(680);
-                left: dpxvw(1259);
+                left: dpxvw(1289);
             }
             .underline-top{
                 background-image: url("../assets/images/main/decorations/underline-top.png");
-                width: dpxvw(331);
+                width: dpxvw(411);
                 height: dpxvw(14);
                 top: dpxvw(270);
-                left: dpxvw(858);
+                left: dpxvw(768);
                 z-index: -1;
             }
             .underline-bottom{
                 background-image: url("../assets/images/main/decorations/underline-bottom.png");
-                width: dpxvw(318);
+                width: dpxvw(558);
                 height: dpxvw(10);
-                top: dpxvw(381);
-                left: dpxvw(940);
+                top: dpxvw(461);
+                left: dpxvw(700);
                 z-index: -1;
             }
             &>.block.float{
@@ -339,7 +339,7 @@
                 height: dpxvw(350*1.105);
             }
             .girl-guitar.background-image{
-                background-image: url("../assets/images/main/md/people/girl-guitar.png");
+                background-image: url("../assets/images/main/md/people/lesson1.png");
             }
             .title{
                 font-family: $unbounded !important;
@@ -377,7 +377,7 @@
                 background-position-x: 100%;
             }
             .boy-guitar.background-image{
-                background-image: url("../assets/images/main/md/people/boy-guitar.png");
+                background-image: url("../assets/images/main/md/people/lesson2.png");
             }
             .part-instrumental-info{
                 display: flex;
@@ -403,7 +403,7 @@
                     0
                     auto
                     dpxvw(59)
-                    dpxvw(31);
+                    auto;
                     
                 }
                 .help-buttons{
@@ -615,7 +615,7 @@
                     .form{
                        .label{
                             .form-input#name{
-                                width: dpxvw(616-(30*2));
+                                width: dpxvw(298-(30*2));
                                 margin: 
                                 0
                                 0
@@ -625,6 +625,7 @@
                        }
                         .container{
                             justify-content: space-between;
+                            gap: 0 dpxvw(24);
                            .label{
                             &:nth-child(1):has(.form-input:not(:valid):not(:focus)){
                                 &::after{
@@ -648,20 +649,15 @@
                                     width: dpxvw(298-(30*2));
                                 }
                            }
-                            margin: 
-                            0
-                            0
-                            dpxvw(30)
-                            0;
                         }
                         .form-submit.container{
                             .form-text{
                                 margin: 
-                                dpxvw(10)
+                                dpxvw(14)
                                 0
                                 0
                                 0;
-                                width: dpxvw(304);
+                                width: dpxvw(298-(5*2));
                             }
                             .submit-btn{
                                 width: dpxvw(293);
@@ -834,7 +830,7 @@
                 }
                 .content-course-piano {
                     .block-photo{
-                        background-image: url("../assets/images/courses/common/boy_guitar_2.png");
+                        background-image: url("../assets/images/courses/common/girl_piano.png");
                     }
                     .sheet-2{
                         top: dpxvw(545);
@@ -1181,25 +1177,27 @@
                         dpxvw(21)
                         dpxvw(26)
                         dpxvw(0) 
-                        dpxvw(39);
+                        dpxvw(24);
                         .block-header{
                             order: 2;
                             &-photo{
                                 background-image: url("../assets/images/methodway/common/boys_guitars.png");
-                                width: dpxvw(270);
+                                width: dpxvw(190);
                                 height:  dpxvw(249);
                             }
                         }
                         .block-body{
                             .block-title{
                                 margin: 
-                                dpxvw(16)
+                                dpxvw(0)
                                 0
                                 dpxvw(16)
                                 0;
+                                white-space: nowrap;
                             }
                             .block-text{
                                 padding-right: dpxvw(10);
+                                font-weight: 400;
                             }
                         }
                     }
@@ -1217,20 +1215,23 @@
                     }
                     .block-skills{
                         align-self: flex-end;
-                        width: dpxvw(330-21-28);
+                        width: dpxvw(330);
                         height:  dpxvw(312-21);
                         padding: 
                         dpxvw(21)
-                        dpxvw(21)
+                        dpxvw(14)
                         dpxvw(0)
-                        dpxvw(28);
+                        dpxvw(20);
                         .block-title{
-                            margin-top: dpxvw(30);
+                            margin-top: dpxvw(0);
+                        }
+                        .block-text{
+                            width: dpxvw(335);
                         }
                     }
                     .block-concert{
                         align-self: flex-end;
-                        width: dpxvw(664-23-21);
+                        width: dpxvw(664-71-21);
                         height:  dpxvw(312-25);
                         padding: 
                         dpxvw(25)
@@ -1244,10 +1245,10 @@
                                 width: dpxvw(230);
                                 height:  dpxvw(251);
                             }
+                          
                         }
                         .block-body{
                             margin-left: dpxvw(30);
-                            margin-top: dpxvw(22);
                         }
                     }
                 }
@@ -1291,15 +1292,15 @@
                 background-image: url("../assets/images/methodway/decorations/sheet_8.svg");
                 width: dpxvw(45);
                 height:  dpxvw(54);
-                top: dpxvw(750);
-                left: dpxvw(777);
+                top: dpxvw(420);
+                left: dpxvw(1470);
             }
             .sheet-2{
                 background-image: url("../assets/images/methodway/decorations/sheet-2.svg");
                 width: dpxvw(27);
                 height:  dpxvw(47);
-                top: dpxvw(712);
-                left: dpxvw(848);
+                top: dpxvw(390);
+                left: dpxvw(1520);
             }
             .spray-down{
                 background-image: url("../assets/images/methodway/decorations/spray_down.svg");
@@ -1665,7 +1666,7 @@
                     .form{
                         .label{
                             .form-input#name2{
-                                width: dpxvw(616-(30*2));
+                                width: dpxvw(298-(30*2));
                                 margin: 
                                 0
                                 0
@@ -1675,14 +1676,10 @@
                         }
                         .container{
                             justify-content: space-between;
-                            .form-input#tel2, .form-input#email2{
+                            gap: 0 dpxvw(24);
+                            .form-input#tel2{
                                 width: dpxvw(298-(30*2));
                             }
-                            margin: 
-                            0
-                            0
-                            dpxvw(30)
-                            0;
                         }
                         .form-submit.container{
                             margin: 
@@ -1696,7 +1693,7 @@
                                 0
                                 0
                                 0;
-                                width: dpxvw(304);
+                                width: dpxvw(298-(5*2));
                             }
                             .submit-btn{
                                 width: dpxvw(293);
@@ -1972,6 +1969,48 @@
                     left: dpxvw(137);
                 }
             }
+        
+            .block-response{
+                width: dpxvw(718);
+                height: dpxvw(317);
+                position: relative;
+                .block-content{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0;
+                    flex-grow: 1;
+                    .micro{
+                        background-image: url("../assets/images/whywe/decorations/micro.svg");
+                        width: dpxvw(97);
+                        height: dpxvw(201);
+                        top: dpxvw(25);
+                        left: dpxvw(30);
+                        transform: scale(-1,1) rotate(-10deg);
+                    }
+                    .hearts{
+                        background-image: url("../assets/images/whywe/decorations/hearts.svg");
+                        width: dpxvw(97*0.5);
+                        height: dpxvw(97*0.5);
+                        top: dpxvw(150);
+                        left: dpxvw(610);
+                    }
+                    .response-info{
+                        width: dpxvw(563);
+                        
+                        text-align: center;
+                        &-text{
+                            font-family: $unbounded;
+                            font-weight: 500;
+                            line-height: 140%;
+                        }
+                    }
+                    
+                }
+                .close-btn{
+                    background-image: url("../assets/images/common/cross.svg") !important;
+                }
+            }
         }
     }
     .footer{
@@ -1981,9 +2020,10 @@
         color: white;
         &-content{
             display: flex;
+            justify-content: end;
             padding: 
             dpxvw(52)
-            dpxvw(281);
+            dpxvw(134);
             flex: 1;
             .social-map{
                 .social-brand{
@@ -2021,7 +2061,14 @@
                     }
                 }
             }
-           
+            .mupss-container{
+                margin-left: dpxvw(100);
+                .mupss{
+              
+                    width: dpxvw(394);
+                    height: dpxvw(226);
+                }
+            }
             .website-map, .contact-map{
                 max-width: dpxvw(247);
                 margin: 

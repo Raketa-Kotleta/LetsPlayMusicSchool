@@ -33,4 +33,4 @@ class Modal{
         this.modal.classList.remove("active");
     }
 }
-export default Modal;
+export default new Modal(".section-modal", ".modal-block");

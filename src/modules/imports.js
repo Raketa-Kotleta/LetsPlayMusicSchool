@@ -19,8 +19,8 @@ import "../assets/images/footer/social-links/yt.svg"
 //modal
 import "../assets/images/common/close_btn.svg"
 //main
-import "../assets/images/main/md/people/girl-guitar.png"
-import "../assets/images/main/md/people/boy-guitar.png"
+import "../assets/images/main/md/people/lesson1.png"
+import "../assets/images/main/md/people/lesson2.png"
 import "../assets/images/main/decorations/circle line.png";
 import "../assets/images/main/decorations/curve.png";
 import "../assets/images/main/decorations/lines.png";

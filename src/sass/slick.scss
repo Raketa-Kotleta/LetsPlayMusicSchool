@@ -22,6 +22,12 @@ $slick-slide__width: auto;
    left: 43.5%;
    background-image: url("../assets/images/reviews/common/arrows/Arrow 3.svg");
 }
+.slick-next:hover{
+    background-image: url("../assets/images/reviews/common/arrows/Arrow 2 active.svg");
+}
+.slick-prev:hover{
+   background-image: url("../assets/images/reviews/common/arrows/Arrow 3 active.svg");
+}
 @media screen and (min-width: 525px) {
     .section-teachers{
         .slider-content{
